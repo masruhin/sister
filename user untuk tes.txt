@@ -1,0 +1,12 @@
+1207079 melp	wali kelas tk
+1009057 reb  wali kelas tk
+1207073 en	wali kelas shs11-ipa, guru kimia
+0912013 pi	pimpinan pius kepala sekolah shs
+1107039 har	kepala sekolah jhs
+0910009 ben	kepala sekolah ps
+1109038 mur	wakil kepala sekolah shs
+1109048 fred	kepala sekolah kg
+0809003 milk	admin kg
+
+1111052 yos	admin jhs
+1112054 Veni	admin shs

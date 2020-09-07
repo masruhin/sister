@@ -1,0 +1,130 @@
+/**************************
+* Nama file			: style.css
+* Di Edit oleh		: ITPCS
+**************************/
+p
+{
+	background 		: #ffffff;
+	border-bottom 	: 4px solid red;
+	padding-top 	: 15px;
+	margin 			: -10px;
+	display 		: none;
+	width 			: auto;
+	height 			: 35px;
+	text-align 		: center;
+	vertical-align 	: center;
+}
+
+#msg
+{
+	color 			: #0000FF;
+	font-weight 	: bold;
+	font-size		: 12px;
+}
+
+#error
+{
+	color 			: #FF1111;
+	font-weight 	: bold;
+	font-size		: 12px;
+}
+
+body
+{
+	background 		: #FFFFFF;
+	color 			: #4B4B4B;
+	font-family 	: verdana;
+}
+
+table
+{
+	font-family 	: verdana;
+	font-size 		: 12px;
+	margin-top 		: 160px;
+	display 		: inline;
+}
+
+table td
+{
+	padding			: 3px;
+	font-weight 	: bold;
+}
+
+input
+{
+	color 			: #4B4B4B;
+}
+
+input
+{
+	background 		: #EFEFEF;
+	border 			: 1px solid #D3D3D3;
+	height 			: 22px;
+}
+
+input:hover
+{
+	background 		: white;
+	border 			: 1px solid #B0B0B0;
+}
+
+input[type=submit]
+{
+	border 			: 1px solid #BEBEBE;
+	background 		: #EFEFEF;
+	font-weight 	: bold;
+	font-size		:10px;
+}
+
+input[type=submit]:hover
+{
+	border 			: 1px solid #B2B2B2;
+	background 		: white;
+	font-weight 	: bold;
+}
+
+.display_absen
+{
+	background 		: #FFD9D9;
+	border-bottom 	: 4px solid #109601;
+	border 			: 1px solid #BEBEBE;
+	width			: 350px;
+	height 			: 230px;
+	padding-top 	: 10px;
+	margin-top 		: 180px;
+
+}
+.display_error
+{
+	background 		: #FFD9D9;
+	border-bottom 	: 4px solid #109601;
+	border 			: 1px solid #BEBEBE;
+	width			: 350px;
+	height 			: 40px;
+	padding-top 	: 10px;
+	margin-top 		: 180px;
+
+}
+
+.display_green
+{
+	background 		: #CBF8AF;
+	border-bottom 	: 4px solid #FC2607;
+	border 			: 1px solid #BEBEBE;
+	width			: 350px;
+	height 			: 130px;
+	padding-top 	: 10px;
+	margin-top 		: 180px;
+}
+
+.display_white
+{
+	background 		: #FFFFFF;
+	border-bottom 	: 4px solid #FC2607;
+	border 			: 0px solid #E0E0E0;
+	width			: 350px;
+	height 			: 130px;
+	padding-top 	: 20px;
+	margin-top 		: 180px;
+}
+  .highlight { background-color: #9AB9DA }

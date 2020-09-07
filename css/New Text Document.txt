@@ -1,0 +1,5 @@
+  .normal {  }
+  .highlight { background-color: #9AB9DA }
+
+
+<tr onMouseOver="this.className='highlight'" onMouseOut="this.className='normal'"> 

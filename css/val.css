@@ -1,0 +1,143 @@
+<style type="text/css">
+body 
+{
+	font-family		: Verdana, Arial, Helvetica, sans-serif;
+	font-size		: 11px;
+}
+
+.top 
+{
+	margin-bottom	: 15px;
+}
+
+.messagebox
+{
+	position		: absolute;
+	width			: 100px;
+	margin-left		: 10px;
+	border			: 1px solid #c93;
+	background		: #ffc;
+	padding			: 1px;
+}
+
+.messageboxok
+{
+	position		: absolute;
+	width			: auto;
+	margin-left		: 10px;
+	border			: 1px solid #349534;
+	background		: #C9FFCA;
+	padding			: 1px;
+	font-weight		: bold;
+	color			: #008000;
+	
+}
+.messageboxerror
+{
+	position		: absolute;
+	width			: auto;
+	margin-left		: 10px;
+	border			: 1px solid #CC0000;
+	background		: #F7CBCA;
+	padding			: 1px;
+	font-weight		: bold;
+	color			: #CC0000;
+}
+
+.total
+{
+	width			: 300px; 
+	height			: 40px; 
+	padding			: 2px; 
+	text-align		: right; 
+	border			: 2px solid black;
+	background		: black;
+	font-size		: 30px;
+	font-weight		: bold;
+	color			: white;
+	margin-left		: 850px;
+	margin-top		: -100px;
+	position		: absolute;
+}
+
+.total1
+{
+	width			: 45px; 
+	height			: 40px; 
+	padding			: 2px; 
+	text-align		: center; 
+	border			: 2px solid black;
+	background		: black;
+    font-size		: 30px;
+    font-weight		: bold;
+	color			: white;
+	margin-left		: 850px;
+	margin-top		: -100px;
+	position		: absolute;
+}
+
+/* Big box with list of options */
+#ajax_listOfOptions
+{
+	position		: absolute;				/* Never change this one */
+	width			: 175px;				/* Width of box */
+	height			: 250px;				/* Height of box */
+	overflow		: auto;					/* Scrolling features */
+	border			: 1px solid #317082;	/* Dark green border */
+	background-color: #FFF;					/* White background color */
+	text-align		: left;
+	font-size		: 0.9em;
+	z-index			: 100;
+}
+
+#ajax_listOfOptions div
+{	/* General rule for both .optionDiv and .optionDivSelected */
+	margin			: 1px;
+	padding			: 1px;
+	cursor			: pointer;
+	font-size		: 0.9em;
+}
+
+#ajax_listOfOptions .optionDiv
+{	/* Div for each item in list */
+}
+
+#ajax_listOfOptions .optionDivSelected
+{ /* Selected item in the list */
+	background-color: #317082;
+	color			: #FFF;
+}
+
+#ajax_listOfOptions_iframe
+{
+	background-color: #F00;
+	position		: absolute;
+	z-index			: 5;
+}
+
+#blanket 
+{
+	background-color: #111;
+	opacity			: 0.65;
+	filter			: alpha(opacity=65);
+	position		: absolute;
+	z-index			: 9001;
+	top				: 0px;
+	left			: 0px;
+	width			: 100%;
+}
+
+#popUpDiv 
+{
+	position		: absolute;
+	background-color: #eeeeee;
+	width			: 300px;
+	height			: 300px;
+	z-index			: 9002;
+}
+
+h1 
+{
+	font-size		: 750%;
+}
+</style>

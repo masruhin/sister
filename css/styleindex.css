@@ -1,0 +1,89 @@
+/**************************************************
+*Nama file		: admin.css
+*Di Edit oleh	: ITPCS
+**************************************************/
+
+body				
+{ 
+	color			: #000000; 
+	background-color: #ffffff; 
+	font-family		: Verdana; 
+	font-size		: 11pt
+}
+
+font				
+{ 
+	color			: #000000; 
+	font-family		: Verdana;
+	font-size		: 11pt
+}
+
+input, select		
+{
+	border			: 1px solid #B9B9B9;
+	color			: #000000; 
+	padding			: 1px;
+	font-family		: Verdana;
+	font-size		: 11pt;
+	height			: 30px
+}
+
+.adminhead		
+{ 
+	color			: #003A70; 
+	font-family		: Verdana; 
+	font-size		: 8pt
+}
+
+.adminhead2		
+{ 
+	color			: #1C4680; 
+	font-family		: Verdana; 
+	font-size		: 8pt
+}
+
+.adminhead3	
+{ 
+	color			: #1C4680; 
+	font-family		: Verdana; 
+	font-size		: 11pt
+}
+
+table td			
+{ 	
+	font-family		: verdana; 
+	font-size 		: 13px; 
+	padding 		: 0px 0px 0px 0px
+}
+
+/**************************
+* Design Left menu on Subpage *
+**************************/
+
+.display_grey
+{
+	background 		: #F1F1F1;
+	border 			: 1px solid #E0E0E0;
+	width			: 350px;
+	height 			: 200px;
+	padding			: 1px;
+	padding-top 	: -55px;
+	padding-bottom 	: 50px;
+	margin-top 		: 30px;
+    margin-bottom 	: 200px;
+	
+}
+
+.display_white
+{
+	background 		: #ffffff;
+	border 			: 0px solid #E0E0E0;
+	width			: 650px;
+	height 			: 200px;
+	padding			: 1px;
+	padding-top 	: -55px;
+	padding-bottom 	: 50px;
+	margin-top 		: 30px;
+    margin-bottom 	: 200px;
+	
+}

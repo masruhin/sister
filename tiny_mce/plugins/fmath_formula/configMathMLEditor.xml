@@ -1,0 +1,18 @@
+<configuration>
+<translate>
+<text id="helpMsg">Use "arrows" and "tab" to navigate, "enter" to create new element, "delete", "backspace" ...</text>
+<text id="matrixChoiceLines">Nb of Lines:</text>
+<text id="matrixChoiceColumns">Nb of columns:</text>
+<text id="matrixChoiceButton">Create matrix</text>			
+</translate>
+<properties>
+<property id="loadOnInit">true</property>
+<property id="urlGenerateImage">http://27.123.223.202/sister/tiny_mce/imageCapture.php</property>
+<property id="defaultImageType">JPG</property>
+<property id="defaultImageCompression">80</property>
+</properties>
+<toolbars>
+</toolbars>
+<buttons>
+</buttons>
+</configuration>

@@ -1,0 +1,335 @@
+/**************************************************
+*Nama file		: admin.css
+*Di Edit oleh	: ITPCS
+**************************************************/
+
+a:link
+{
+	color			: #000000;
+	font-family		: Verdana;
+	text-decoration	: none
+}
+a:focus
+{
+	color: blue;
+    text-decoration	: bold;
+}
+
+a:visited		
+{ 
+	color			: #003A70;
+	font-family		: Verdana; 
+	text-decoration	: none
+}
+
+a:active		
+{ 
+	color			: #000000;
+	font-family		: Verdana; 
+	text-decoration	: none
+}
+
+a:hover			
+{ 
+	color			: #D4D0C8; 
+	font-family		: Verdana; 
+	text-decoration	: none
+}
+
+body				
+{ 
+	color			: #000000; 
+	background-color: #ffffff; 
+	font-family		: Verdana; 
+	font-size		: 8pt
+}
+
+font				
+{ 
+	color			: #000000; 
+	font-family		: Verdana;
+	font-size		: 8pt
+}
+
+input, select		
+{
+	border			: 1px solid #808080;
+	color			: #000000; 
+	padding			: 1px;
+	font-family		: Verdana;
+	font-size		: 8pt;
+	height			: 20px
+}
+
+.input_index	
+{
+	border			: 0px solid #808080;
+	color			: #000000; 
+	padding			: 0px;
+	font-family		: Verdana;
+	font-size		: 12pt;
+	height			: 50px
+}
+
+textarea	
+{
+	border			: 1px solid #808080;
+	color			: #000000; 
+	padding			: 1px;
+	font-family		: Verdana;
+	font-size		: 8pt;
+}
+
+.textarea_01
+{
+	border			: 1px solid #808080;
+	color			: #000000; 
+	padding			: 1px;
+	font-family		: Verdana;
+	font-size		: 8pt;
+	width			: 370px;
+	height			: 70px
+}
+
+.textarea_02
+{
+	border			: 1px solid #808080;
+	color			: #000000; 
+	padding			: 1px;
+	font-family		: Verdana;
+	font-size		: 8pt;
+	width			: 370px;
+	height			: 50px
+}
+
+input::-moz-focus-inner 
+{
+	border			: 0;
+	display			: inline-block;
+}
+
+textarea::-moz-focus-inner 
+{
+	border			: 0;
+	display			: inline-block;
+}
+
+.important		
+{ 
+	color			: red; 	  
+	font-family		: Verdana; 
+	font-size		: 8pt
+}
+
+.adminhead		
+{ 
+	color			: #003A70; 
+	font-family		: Verdana; 
+	font-size		: 8pt
+}
+
+.ver11 			
+{ 
+	color			: #000000; 
+	font-family		: Verdana, Arial, Helvetica, sans-serif; 
+	font-size		: 11px; 
+	text-decoration	: none
+}
+
+table				
+{
+	border			: 0px solid #808080;
+	font-family		: Verdana;
+	font-size		: 8pt;
+}
+
+table td			
+{ 	
+	font-family		: verdana; 
+	font-size 		: 13px; 
+	padding 		: 0px 0px 0px 0px
+}
+
+.initial 		
+{ 
+	color			: #000000; 
+	background-color: #DDDDDD
+}
+
+.normal 			{}
+
+.highlight 		
+{ 
+	background-color: #E8E8FF
+}
+
+.calCanvas 		
+{ 
+	border-style	: outset;
+	border-width	: 2px;
+	position		: absolute;
+	width			: 180px;
+	visibility		: hidden;
+	z-index			: -1;
+	display			: block
+}
+	
+.year 			
+{ 
+	color			: #FFFFFF; 
+	background-color: #000099; 
+	font-family		: Verdana; 
+	font-size		: 9pt; 
+	font-weight		: bold; 
+	border			: 1px inset
+}
+
+.month 			
+{ 
+	color			: #000099; 
+	background-color: #FFFFFF; 
+	font-family		: Verdana; 
+	font-size		: 8pt; 
+	border			: 1px inset
+}
+
+.calbg 			
+{
+	background-color: #cccccc; 
+	font-family		: Verdana
+}
+
+.dayNames 		
+{ 
+	color			: #FFFFFF; 
+	background-color: #000099; 
+	font-family		: Verdana; 
+	font-size		: 8pt; 
+	height			: 16px
+}
+
+.day 			
+{ 
+	color			: #000000; 
+	background-color: #FFFFFF; 
+	font-family		: Verdana;	
+	font-size		: 8pt; 
+	border			: 1px outset; 
+	height			: 16px
+}
+
+.today 			
+{ 
+	color			: #000000; 
+	font-family		: Verdana;	
+	font-size		: 8pt;	
+	height			: 16px
+}
+
+.cday 			
+{ 
+	color			: #000000; 
+	background-color: #FFFF99; 
+	font-family		: Verdana; 
+	font-size		: 8pt; 
+	font-weight		: bold; 
+	border			: 1px outset; 
+	height			: 16px
+}
+
+.linkbold 		
+{ 
+	text-decoration	: none;	
+	font-weight		: bold
+}
+
+.linknormal 		
+{ 
+	text-decoration	: none
+}
+
+.nwday 			
+{ 
+	color			: #000000; 
+	background-color: #B9B9BB; 
+	font-family		: Verdana; 
+	font-size		: 8pt; 
+	border			: 1px outset; 
+	height			:16px
+}
+
+.nwDayNames 		
+{ 
+	color			: #FFFFFF; 
+	background-color: #B9B9BB; 
+	font-family		: Verdana; 
+	font-size		: 8pt; 
+	height			: 16px
+}
+
+/**************************
+* Design Left menu on Subpage *
+**************************/
+#LeftMenu 
+{
+    border				: 0px solid #ffffff;
+    padding				: 0px 0px 0px 10px;
+}
+
+/* ini bagian sub menu */
+#LeftMenu div div 
+{
+	background-color	: #3362A8;
+	border-bottom-color	: #ffffff;
+	border-bottom-width	: 0px;
+	border-bottom-style	: solid;
+	padding				: 2px 0px 2px 0px;
+}
+
+/* ini bagian menu */
+#LeftMenu .LeftMenuHead 
+{
+    color				: #ffffff;
+    background-color	: #3362A8;
+    font-weight			: bold;
+    font-size			: 11;
+    padding				: 4px 2px 2px 0px;
+    vertical-align		: middle;
+}
+
+#LeftMenu .LeftMenuline 
+{
+	border-top-width	: 1px;
+    border-bottom-width	: 0px;
+    border-top-style	: solid;
+    border-bottom-style	: solid;
+    border-top-color	: #ffffff;
+    border-bottom-color	: #00478A;
+    padding				: 0px;
+}
+
+#LeftMenu .Section_menuActive 
+{
+    background-color	: #c3e4fc;
+    border-bottom-color	: #ffffff;
+    border-bottom-width	: 1px;
+    border-bottom-style	: solid;
+    padding				: 10px 0px 2px 15px;
+    color				: #ffffff;
+    font-weight			: normal;
+    font-size			: 11;
+    text-decoration		: underline;
+}
+.display_grey
+{
+	background 		: #F1F1F1;
+	border 			: 1px solid #E0E0E0;
+	width			: 350px;
+	height 			: 200px;
+	padding			: 1px;
+	padding-top 	: -55px;
+	padding-bottom 	: 50px;
+	margin-top 		: 30px;
+    margin-bottom 	: 200px;
+	
+}
