@@ -1,3 +1,4 @@
+
 <?php
 //----------------------------------------------------------------------------------------------------
 //Program		: R1D04LTK2.php
@@ -28,12 +29,12 @@ class R1D04LTK22class
   			<TABLE BORDER='0' CELLPADDING='0' CELLSPACING='5' WIDTH='100%'>
         		<TR><TD COLSPAN='2'><B>PRINT LEARNING RECORD K2</B></TD></TR>
            		<TR></TR><TR></TR>
-				<TR><TD WIDTH='15%'>NIS</TD>
+				<TR><TD WIDTH='15%'>NIS & Nama</TD>
 					<TD WIDTH='85%'>:
 						<SELECT NAME		='kdekls'
 								ID			='kdekls'
-								ONKEYUP		='uppercase(this.id)'>
-						<OPTION VALUE='' SELECTED ><legend>--SELECT--</legend></OPTION>";
+								ONKEYUP		='uppercase(this.id)' name='select' id='select'>
+						<OPTION VALUE='#' disabled='disabled' text-align='center' SELECTED >== SELECT Option ==</OPTION>";
 		$query2 = "SELECT
 									A.nis,
 									A.nmassw,
@@ -45,15 +46,16 @@ class R1D04LTK22class
 									B.kdekls 
 								FROM
 									t_mstssw A
-									JOIN t_mstkls B ON ( A.kdekls = B.kdekls ) 
+								JOIN t_mstkls B ON ( A.kdekls = B.kdekls ) 
 								WHERE
-									A.kdekls = 'PG1'"; // kdekls LIKE 'PG%' OR 
+									A.kdekls = 'PG1'
+								ORDER BY nis asc"; // kdekls LIKE 'PG%' OR 
 		$result2 = mysql_query($query2);
 		while ($data = mysql_fetch_array($result2)) {
 			if ($kdekls == $data[nis])
-				echo "<OPTION VALUE='$data[nis]' SELECTED>$data[nmassw] - $data[nis]</OPTION>";
+				echo "<OPTION VALUE='$data[nis]' SELECTED>$data[nis] - $data[nmassw]</OPTION>";
 			else
-				echo "<OPTION VALUE='$data[nis]'>$data[nmassw] - $data[nis]</OPTION>";
+				echo "<OPTION VALUE='$data[nis]'>$data[nis] - $data[nmassw]</OPTION>";
 		}
 		echo "
 						</SELECT>

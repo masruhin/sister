@@ -351,10 +351,12 @@ if (!isset($_SESSION['Admin'])) {
 
 			echo "<li><a href='guru.php?mode=R1D04XTK_Cari'>Input Learning Record (Pre-K - KG)</a></li>";
 
-			echo "<li><a href='guru.php?mode=R1D04LPG'>Print Learning Record (Pre-K)</a></li>"; // - Pre-K
+			echo "<li><a href='guru.php?mode=R1D04LTK22'>Print Learning Record (PG1)</a></li>";
+			//echo"<li><a href='guru.php?mode=R1D04LPG'>Print Learning Record (Pre-K)</a></li>";// - Pre-K
 			echo "<li><a href='guru.php?mode=R1D04LTK'>Print Learning Record (K1)</a></li>"; // - K1
 			echo "<li><a href='guru.php?mode=R1D04LTK2'>Print Learning Record (K2)</a></li>"; // - K2
-			echo "<li><a href='guru.php?mode=R1D04LTK22'>Print Learning Record (PG1)</a></li>";
+
+
 
 			echo "<hr/>";
 
@@ -385,10 +387,10 @@ if (!isset($_SESSION['Admin'])) {
 
 			echo "<li><a href='guru.php?mode=R1D04XTK_Cari'>Input Learning Record (Pre-K - KG)</a></li>";
 
-			echo "<li><a href='guru.php?mode=R1D04LPG'>Print Learning Record (Pre-K)</a></li>"; // - Pre-K
+			echo "<li><a href='guru.php?mode=R1D04LTK22'>Print Learning Record (PG1)</a></li>";
+			//echo"<li><a href='guru.php?mode=R1D04LPG'>Print Learning Record (Pre-K)</a></li>";// - Pre-K
 			echo "<li><a href='guru.php?mode=R1D04LTK'>Print Learning Record (K1)</a></li>"; // - K1
 			echo "<li><a href='guru.php?mode=R1D04LTK2'>Print Learning Record (K2)</a></li>"; // - K2
-			echo "<li><a href='guru.php?mode=R1D04LTK22'>Print Learning Record (PG1)</a></li>";
 
 			echo "</ul>";
 		}
@@ -725,11 +727,16 @@ if (!isset($_SESSION['Admin'])) {
 			echo "<span class='dir'>Rapor Diknas</span>";
 			echo "<ul>";
 
+			//echo"<li><a href='guru.php?mode=R1D11G'>Input Nilai Sikap (SD)</a></li>";
+			//echo"<li><a href='guru.php?mode=R1D11H'>Input Deskripsi Pengetahuan (SD)</a></li>";
+			//echo"<li><a href='guru.php?mode=R1D11I'>Input Deskripsi Keterampilan (SD)</a></li>";
+
 			echo "<li><a href='guru.php?mode=R1D11A'>Cetak Rapor Diknas Cover 1 (SD)</a></li>";
 			echo "<li><a href='guru.php?mode=R1D11B'>Cetak Rapor Diknas Cover 2 (SD)</a></li>";
 			echo "<li><a href='guru.php?mode=R1D11C'>Cetak Rapor Diknas Cover 3 (SD)</a></li>";
 
-			//echo"<li><a href='guru.php?mode=R1D11D'>Cetak Rapor Diknas Akademik Pengetahuan (SD)</a></li>";
+			echo "<li><a href='guru.php?mode=R1D11D'>Cetak Rapor Diknas Akademik Pengetahuan (SD)</a></li>";
+			echo "<li><a href='guru.php?mode=R1D11E'>Cetak Rapor Diknas Akademik Keterampilan (SD)</a></li>";
 
 			echo "</ul>";
 
@@ -880,7 +887,6 @@ if (!isset($_SESSION['Admin'])) {
 		require("pendataan/R1D04LPG.php"); // print learning record pRE-K
 		require("pendataan/R1D04LTK.php"); // print learning record tk k1
 		require("pendataan/R1D04LTK2.php"); // print learning record tk k2
-		require("pendataan/R1D04LTK22.php"); // print learning record tk k2
 		require("pendataan/R1D04LPGab.php"); // cetak laporan perkembangan anak pg
 		require("pendataan/R1D04LTKaA.php"); // cetak laporan perkembangan anak tka
 		require("pendataan/R1D04LTKbB.php"); // cetak laporan perkembangan anak tkb
@@ -906,10 +912,12 @@ if (!isset($_SESSION['Admin'])) {
 
 
 		//AWAL BUATAN BARU
+		require("pendataan/R1D04LTK22.php");
 		require("pendataan/R1D11A.php");
 		require("pendataan/R1D11B.php");
 		require("pendataan/R1D11C.php");
 		require("pendataan/R1D11D.php");
+		// require("pendataan/R1D11E.php");
 		//AKHIR BUATAN BARU
 
 
@@ -1023,7 +1031,6 @@ if (!isset($_SESSION['Admin'])) {
 		$R1D04LPGclass 	= new R1D04LPGclass; // print LEARNING record pre-k
 		$R1D04LTKclass 	= new R1D04LTKclass; // print LEARNING record tk k1
 		$R1D04LTK2class = new R1D04LTK2class; // print LEARNING record tk k2
-		$R1D04LTK22class = new R1D04LTK22class; // print LEARNING record tk k2
 		$R1D04LPGabclass = new R1D04LPGabclass; // cetak laporan perkembangan anak pg
 		$R1D04LTKaAclass = new R1D04LTKaAclass; // cetak laporan perkembangan anak tka
 		$R1D04LTKbBclass = new R1D04LTKbBclass; // cetak laporan perkembangan anak tkb
@@ -1049,10 +1056,13 @@ if (!isset($_SESSION['Admin'])) {
 
 
 		//AWAL BUATAN BARU
+		$R1D04LTK22class 	= new R1D04LTK22class;
+
 		$R1D11Aclass 	= new R1D11Aclass;
 		$R1D11Bclass 	= new R1D11Bclass;
 		$R1D11Cclass 	= new R1D11Cclass;
 		$R1D11Dclass 	= new R1D11Dclass;
+		// $R1D11Eclass 	= new R1D11Eclass;
 		//AKHIR BUATAN BARU
 
 
@@ -1729,11 +1739,6 @@ if (!isset($_SESSION['Admin'])) {
 			case "R1D04LTK2";
 				$R1D04LTK2class->R1D04LTK2();
 				break;
-
-			case "R1D04LTK22";
-				$R1D04LTK22class->R1D04LTK22();
-				break;
-
 				// -------------------------------------------------- learning record pg  --------------------------------------------------
 			case "R1D04LPGab";
 				$R1D04LPGabclass->R1D04LPGab();
@@ -1914,7 +1919,12 @@ if (!isset($_SESSION['Admin'])) {
 
 
 				//AWAL BUATAN BARU
+			case "R1D04LTK22";
+				$R1D04LTK22class->R1D04LTK22();
+				break;
+
 				// -------------------------------------------------- cetak rapor diknas sd --------------------------------------------------
+
 			case "R1D11A";
 				$R1D11Aclass->R1D11A();
 				break;
@@ -1929,6 +1939,10 @@ if (!isset($_SESSION['Admin'])) {
 
 			case "R1D11D";
 				$R1D11Dclass->R1D11D();
+				break;
+
+			case "R1D11E";
+				$R1D11Eclass->R1D11E();
 				break;
 				//AKHIR BUATAN BARU
 
