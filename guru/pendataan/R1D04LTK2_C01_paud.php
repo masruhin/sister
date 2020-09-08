@@ -587,18 +587,6 @@ if ($data2 = mysql_fetch_array($result2)) {
 echo "
 
 
-
-
-	<br/>
-	<br/><br/>
-	
-	
-	
-	<center>
-			<FONT FACE='ARIAL' SIZE='100'><b>Student No. : $nis</b></font>
-	</center>
-	<br/>
-	<br/><br/>
 	
 	
 	
