@@ -38,9 +38,12 @@ class R1D04LPGclass
 						$query2="	SELECT 		nis, nmassw
 									FROM 		t_mstssw
                                     WHERE      	str != 'K' AND 
-												( kdekls LIKE 'PG%' ) AND 
-												thn_ajaran = '2018-2019'
+												( kdekls LIKE 'PG%' ) 
 									ORDER BY	kdekls "; // OR kdekls LIKE 'KG%' 
+									/*
+									AND 
+												thn_ajaran = '2018-2019'
+									*/
 						$result2=mysql_query($query2);
 						while($data=mysql_fetch_array($result2))
 						{

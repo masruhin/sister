@@ -135,6 +135,25 @@ class R1D04Xclass
 					//$isianmidtes[1]='disabled';
 					
 					
+					
+					//ka
+					$y=1;
+					while($y<9)
+					{
+						$isianka[$y]='disabled';
+						$y++;
+					}
+					
+					//sa
+					$y=1;
+					while($y<9)
+					{
+						$isiansa[$y]='disabled';
+						$y++;
+					}
+					
+					
+					
 					break;
 				case 'edit':
 					$y=1;
@@ -192,6 +211,30 @@ class R1D04Xclass
 					
 					
 					
+					//ka
+					$y=1;
+					while($y<9)
+					{
+						if($kolom1=='hw' and $kolom2=="$y")
+							$isianka[$y]='enable';
+						else	
+							$isianka[$y]='disabled';
+						
+						$y++;
+					}
+					
+					//sa
+					$y=1;
+					while($y<9)
+					{
+						if($kolom1=='prj' and $kolom2=="$y")
+							$isiansa[$y]='enable';
+						else	
+							$isiansa[$y]='disabled';
+						
+						$y++;
+					}
+					
 					
 					
 					break;
@@ -230,7 +273,7 @@ class R1D04Xclass
 				$query2	="	SELECT 		t_prgrptps_sd.*
 						FROM 		t_prgrptps_sd
 						WHERE 		t_prgrptps_sd.nis		='". mysql_escape_string($nis)."' AND
-									t_prgrptps_sd.kdeplj	='". mysql_escape_string($kdeplj)."'  ";//AND t_prgrptps_sd.thn_ajaran		='". mysql_escape_string($thnajr)."'
+									t_prgrptps_sd.kdeplj	='". mysql_escape_string($kdeplj)."'  ";
 				//t_prgrptps_sd.nis		='". mysql_escape_string($kdekls)."' AND
 				$result2 =mysql_query($query2);
 				$data2 	 =mysql_fetch_array($result2);
@@ -262,6 +305,28 @@ class R1D04Xclass
 				}
 
 				//$cell[$i][$y+26]=$data2['midtes'."$sms"."$nlitrm"];
+				
+				
+				
+				$d_ka1 = $data2['ka1_'."$sms"."$nlitrm"];
+				$d_ka2 = $data2['ka2_'."$sms"."$nlitrm"];
+				$d_ka3 = $data2['ka3_'."$sms"."$nlitrm"];
+				$d_ka4 = $data2['ka4_'."$sms"."$nlitrm"];
+				$d_ka5 = $data2['ka5_'."$sms"."$nlitrm"];
+				$d_ka6 = $data2['ka6_'."$sms"."$nlitrm"];
+				$d_ka7 = $data2['ka7_'."$sms"."$nlitrm"];
+				$d_ka8 = $data2['ka8_'."$sms"."$nlitrm"];
+				
+				$d_sa1 = $data2['sa1_'."$sms"."$nlitrm"];
+				$d_sa2 = $data2['sa2_'."$sms"."$nlitrm"];
+				$d_sa3 = $data2['sa3_'."$sms"."$nlitrm"];
+				$d_sa4 = $data2['sa4_'."$sms"."$nlitrm"];
+				$d_sa5 = $data2['sa5_'."$sms"."$nlitrm"];
+				$d_sa6 = $data2['sa6_'."$sms"."$nlitrm"];
+				$d_sa7 = $data2['sa7_'."$sms"."$nlitrm"];
+				$d_sa8 = $data2['sa8_'."$sms"."$nlitrm"];
+				
+				
 				
 				$i++;
 			//}
@@ -349,29 +414,29 @@ class R1D04Xclass
 					echo"
 						<TR bgcolor='dedede'>
 							<!--Knowledge-->
-							<td>
-								<!--1-->
+							<td align='center'>
+								<input type='text' name='d_ka1' size='3' maxlength='3' value='$d_ka1' $isianka[1]/><!--1-->
 							</td>
-							<td>
-								<!--2-->
+							<td align='center'>
+								<input type='text' name='d_ka2' size='3' maxlength='3' value='$d_ka2' $isianka[2]/><!--2-->
 							</td>
-							<td>
-								<!--3-->
+							<td align='center'>
+								<input type='text' name='d_ka3' size='3' maxlength='3' value='$d_ka3' $isianka[3]/><!--3-->
 							</td>
-							<td>
-								<!--4-->
+							<td align='center'>
+								<input type='text' name='d_ka4' size='3' maxlength='3' value='$d_ka4' $isianka[4]/><!--4-->
 							</td>
-							<td>
-								<!--5-->
+							<td align='center'>
+								<input type='text' name='d_ka5' size='3' maxlength='3' value='$d_ka5' $isianka[5]/><!--5-->
 							</td>
-							<td>
-								<!--6-->
+							<td align='center'>
+								<input type='text' name='d_ka6' size='3' maxlength='3' value='$d_ka6' $isianka[6]/><!--6-->
 							</td>
-							<td>
-								<!--7-->
+							<td align='center'>
+								<input type='text' name='d_ka7' size='3' maxlength='3' value='$d_ka7' $isianka[7]/><!--7-->
 							</td>
-							<td>
-								<!--8-->
+							<td align='center'>
+								<input type='text' name='d_ka8' size='3' maxlength='3' value='$d_ka8' $isianka[8]/><!--8-->
 							</td>
 							<td>
 								Mid Test / Final Test
@@ -380,29 +445,29 @@ class R1D04Xclass
 							
 							
 							<!--Skills-->
-							<td>
-								<!--1-->
+							<td align='center'>
+								<input type='text' name='d_sa1' size='3' maxlength='3' value='$d_sa1' $isiansa[1]/><!--1-->
 							</td>
 							<td>
-								<!--2-->
+								<input type='text' name='d_sa2' size='3' maxlength='3' value='$d_sa2' $isiansa[2]/><!--2-->
 							</td>
-							<td>
-								<!--3-->
+							<td align='center'>
+								<input type='text' name='d_sa3' size='3' maxlength='3' value='$d_sa3' $isiansa[3]/><!--3-->
 							</td>
-							<td>
-								<!--4-->
+							<td align='center'>
+								<input type='text' name='d_sa4' size='3' maxlength='3' value='$d_sa4' $isiansa[4]/><!--4-->
 							</td>
-							<td>
-								<!--5-->
+							<td align='center'>
+								<input type='text' name='d_sa5' size='3' maxlength='3' value='$d_sa5' $isiansa[5]/><!--5-->
 							</td>
-							<td>
-								<!--6-->
+							<td align='center'>
+								<input type='text' name='d_sa6' size='3' maxlength='3' value='$d_sa6' $isiansa[6]/><!--6-->
 							</td>
-							<td>
-								<!--7-->
+							<td align='center'>
+								<input type='text' name='d_sa7' size='3' maxlength='3' value='$d_sa7' $isiansa[7]/><!--7-->
 							</td>
-							<td>
-								<!--8-->
+							<td align='center'>
+								<input type='text' name='d_sa8' size='3' maxlength='3' value='$d_sa8' $isiansa[8]/><!--8-->
 							</td>
 							<td>
 								Mid Test / Final Test
@@ -714,17 +779,17 @@ class R1D04Xclass
 			if($pilihan=='edit')
 			{
 				echo"
-				<INPUT TYPE='submit' 					VALUE='SAVE'>
-				<INPUT TYPE='hidden' NAME='mode' 		VALUE='R1D04X_Save'>
-				<INPUT TYPE='hidden' NAME='pilihan'		VALUE='edit'>
-				<INPUT TYPE='hidden' NAME='kdeplj'		VALUE=$kdeplj>
-				<INPUT TYPE='hidden' NAME='kdekls'		VALUE=$kdekls>
-				<!--<INPUT TYPE='hidden' NAME='thnajr'		VALUE=$thnajr>-->
-				<INPUT TYPE='hidden' NAME='sms'			VALUE=$sms>
-				<INPUT TYPE='hidden' NAME='nlitrm'		VALUE=$nlitrm>
-				<INPUT TYPE='hidden' NAME='kolom1'		VALUE=$kolom1>
-				<INPUT TYPE='hidden' NAME='kolom2'		VALUE=$kolom2>
-				<INPUT TYPE='hidden' NAME='i'			VALUE=$i>";
+				<INPUT TYPE='submit' 					VALUE='SAVE' />
+				<INPUT TYPE='hidden' NAME='mode' 		VALUE='R1D04X_Save' />
+				<INPUT TYPE='hidden' NAME='pilihan'		VALUE='edit' />
+				<INPUT TYPE='hidden' NAME='kdeplj'		VALUE='$kdeplj' />
+				<INPUT TYPE='hidden' NAME='kdekls'		VALUE='$kdekls' />
+				
+				<INPUT TYPE='hidden' NAME='sms'			VALUE='$sms' />
+				<INPUT TYPE='hidden' NAME='nlitrm'		VALUE='$nlitrm' />
+				<INPUT TYPE='hidden' NAME='kolom1'		VALUE='$kolom1' />
+				<INPUT TYPE='hidden' NAME='kolom2'		VALUE='$kolom2' />
+				<INPUT TYPE='hidden' NAME='i'			VALUE='$i' />";
 			}
 			echo"
 		</FORM>";
@@ -745,7 +810,25 @@ class R1D04Xclass
         $tglrbh =date("d-m-Y");
        	$jamrbh	=date("h:i:s");
 		
-		//$thnajr	=$_POST['thnajr'];
+		
+		$d_ka1	=$_POST['d_ka1'];
+		$d_ka2	=$_POST['d_ka2'];
+		$d_ka3	=$_POST['d_ka3'];
+		$d_ka4	=$_POST['d_ka4'];
+		$d_ka5	=$_POST['d_ka5'];
+		$d_ka6	=$_POST['d_ka6'];
+		$d_ka7	=$_POST['d_ka7'];
+		$d_ka8	=$_POST['d_ka8'];
+		
+		$d_sa1	=$_POST['d_sa1'];
+		$d_sa2	=$_POST['d_sa2'];
+		$d_sa3	=$_POST['d_sa3'];
+		$d_sa4	=$_POST['d_sa4'];
+		$d_sa5	=$_POST['d_sa5'];
+		$d_sa6	=$_POST['d_sa6'];
+		$d_sa7	=$_POST['d_sa7'];
+		$d_sa8	=$_POST['d_sa8'];
+		
 		
 		$query	="	SELECT 		t_mstbbt_sd.*
 					FROM 		t_mstbbt_sd
@@ -803,14 +886,25 @@ class R1D04Xclass
 			
 			
 			//AWAL BUATAN BARU
-			/*
-			if ( $nli < 40 )
+			
+			if ( $nli <= 39 )
 			{
-				echo"
-					
-				";
+				$nli = 40;
+				
+				/*echo"
+					<script>
+						alert('Perhatian! Tolong Peng-input-an nilai tidak lebih kecil dari 40 , Terima kasih!');
+					</script>
+				";*/
 			}
-			*/
+			/*else
+			{
+				
+			}*/
+			//return false
+			//<meta http-equiv='refresh' content=\'0;url=guru.php?mode=R1D04X&kdeplj=$kdeplj&kdekls=$kdekls&pilihan=detil\'>
+			//setTimeout("window.history.go(-1)",2000);
+			
 			//AKHIR BUATAN BARU
 			
 			
@@ -820,12 +914,12 @@ class R1D04Xclass
 								t_prgrptps_sd."."$nliw"."	='". mysql_escape_string($nli)."',
 								t_prgrptps_sd.kdeusr	='". mysql_escape_string($kdeusr)."',
 								t_prgrptps_sd.tglrbh	='". mysql_escape_string($tglrbh)."',
-								t_prgrptps_sd.jamrbh	='". mysql_escape_string($jamrbh)."' "; //, t_prgrptps_sd.thn_ajaran		='". mysql_escape_string($thnajr)."'
+								t_prgrptps_sd.jamrbh	='". mysql_escape_string($jamrbh)."' ";
 
 			$query	="	SELECT 		t_prgrptps_sd.*
 						FROM 		t_prgrptps_sd
 						WHERE 		t_prgrptps_sd.nis	='". mysql_escape_string($nis)."'	AND
-									t_prgrptps_sd.kdeplj	='". mysql_escape_string($kdeplj)."'  "; //AND t_prgrptps_sd.thn_ajaran		='". mysql_escape_string($thnajr)."'
+									t_prgrptps_sd.kdeplj	='". mysql_escape_string($kdeplj)."'  ";
 									// menghasilkan nis dan matpel nya
 			$result =mysql_query($query);
 			$data	=mysql_fetch_array($result);
@@ -838,7 +932,7 @@ class R1D04Xclass
 			{
 				$query 	="	UPDATE 	t_prgrptps_sd ".$set.
 						"	WHERE 	t_prgrptps_sd.nis	='". mysql_escape_string($nis)	."'	AND
-									t_prgrptps_sd.kdeplj	='". mysql_escape_string($kdeplj)	."'  ";//AND t_prgrptps_sd.thn_ajaran		='". mysql_escape_string($thnajr)."'
+									t_prgrptps_sd.kdeplj	='". mysql_escape_string($kdeplj)	."'  ";
 				$result =mysql_query ($query) or die (error("Data tidak berhasil di rubah")); // update nilai
 			}	
 			$j++;
@@ -857,7 +951,7 @@ class R1D04Xclass
 			$query2 ="	SELECT 		t_prgrptps_sd.*
 						FROM 		t_prgrptps_sd
 						WHERE		t_prgrptps_sd.nis	='$nis'		AND
-									t_prgrptps_sd.kdeplj='$kdeplj'  "; //AND t_prgrptps_sd.thn_ajaran	='$thnajr'
+									t_prgrptps_sd.kdeplj='$kdeplj'  "; 
 									// menghasilkan nis dan matpel nya
 			$result2=mysql_query($query2) or die('Query gagal');
 			$data2	=mysql_fetch_array($result2);
@@ -912,7 +1006,7 @@ class R1D04Xclass
 			$query2 ="	SELECT 		t_prgrptps_sd.*
 						FROM 		t_prgrptps_sd
 						WHERE		t_prgrptps_sd.nis	='$nis'		AND
-									t_prgrptps_sd.kdeplj='$kdeplj'  "; //AND t_prgrptps_sd.thn_ajaran	='$thnajr'
+									t_prgrptps_sd.kdeplj='$kdeplj'  "; 
 									// menghasilkan nis dan matpel nya
 			$result2=mysql_query($query2) or die('Query gagal');
 			$data2	=mysql_fetch_array($result2);
@@ -971,15 +1065,61 @@ class R1D04Xclass
 			$aff		='aff'."$sms"."$nlitrm";
 			$ttlakh		=$ttlakh+$nliakh;
 			
-			//
+			
+			
+			//AWAL BUATAN BARU
+			
+			$kaw1		='ka1_'."$sms"."$nlitrm";
+			$kaw2		='ka2_'."$sms"."$nlitrm";
+			$kaw3		='ka3_'."$sms"."$nlitrm";
+			$kaw4		='ka4_'."$sms"."$nlitrm";
+			$kaw5		='ka5_'."$sms"."$nlitrm";
+			$kaw6		='ka6_'."$sms"."$nlitrm";
+			$kaw7		='ka7_'."$sms"."$nlitrm";
+			$kaw8		='ka8_'."$sms"."$nlitrm";
+			
+			$saw1		='sa1_'."$sms"."$nlitrm";
+			$saw2		='sa2_'."$sms"."$nlitrm";
+			$saw3		='sa3_'."$sms"."$nlitrm";
+			$saw4		='sa4_'."$sms"."$nlitrm";
+			$saw5		='sa5_'."$sms"."$nlitrm";
+			$saw6		='sa6_'."$sms"."$nlitrm";
+			$saw7		='sa7_'."$sms"."$nlitrm";
+			$saw8		='sa8_'."$sms"."$nlitrm";
+			
+			
+			
+			//AKHIR BUATAN BARU
 
-			$set	="	SET		t_prgrptps_sd."."$fgk"."	='". mysql_escape_string($nfgk)."',
+
+
+			$set	="	SET		t_prgrptps_sd."."$kaw1"."	='". mysql_escape_string($d_ka1)."',
+								t_prgrptps_sd."."$kaw2"."	='". mysql_escape_string($d_ka2)."',
+								t_prgrptps_sd."."$kaw3"."	='". mysql_escape_string($d_ka3)."',
+								t_prgrptps_sd."."$kaw4"."	='". mysql_escape_string($d_ka4)."',
+								t_prgrptps_sd."."$kaw5"."	='". mysql_escape_string($d_ka5)."',
+								t_prgrptps_sd."."$kaw6"."	='". mysql_escape_string($d_ka6)."',
+								t_prgrptps_sd."."$kaw7"."	='". mysql_escape_string($d_ka7)."',
+								t_prgrptps_sd."."$kaw8"."	='". mysql_escape_string($d_ka8)."',
+								
+								t_prgrptps_sd."."$saw1"."	='". mysql_escape_string($d_sa1)."',
+								t_prgrptps_sd."."$saw2"."	='". mysql_escape_string($d_sa2)."',
+								t_prgrptps_sd."."$saw3"."	='". mysql_escape_string($d_sa3)."',
+								t_prgrptps_sd."."$saw4"."	='". mysql_escape_string($d_sa4)."',
+								t_prgrptps_sd."."$saw5"."	='". mysql_escape_string($d_sa5)."',
+								t_prgrptps_sd."."$saw6"."	='". mysql_escape_string($d_sa6)."',
+								t_prgrptps_sd."."$saw7"."	='". mysql_escape_string($d_sa7)."',
+								t_prgrptps_sd."."$saw8"."	='". mysql_escape_string($d_sa8)."',
+								
+								
+								
+								t_prgrptps_sd."."$fgk"."	='". mysql_escape_string($nfgk)."',
 								t_prgrptps_sd."."$fgs"."	='". mysql_escape_string($nfgs)."',
 								t_prgrptps_sd."."$akh"."	='". mysql_escape_string($avgtes)."',
 								t_prgrptps_sd."."$aff"."	='". mysql_escape_string($avgtes)."' "; //$nliakh
 			$query 	="	UPDATE 	t_prgrptps_sd ".$set.
 					"	WHERE 	t_prgrptps_sd.nis	='". mysql_escape_string($nis)	."'	AND
-								t_prgrptps_sd.kdeplj	='". mysql_escape_string($kdeplj)	."'  ";//AND t_prgrptps_sd.thn_ajaran	='". mysql_escape_string($thnajr)	."'
+								t_prgrptps_sd.kdeplj	='". mysql_escape_string($kdeplj)	."'  ";
 			$result =mysql_query ($query) or die (error("Data tidak berhasil di rubah")); // UPDATE nilai field akh (akhir)
 			
 			if($nliakh>0)
@@ -1024,7 +1164,7 @@ class R1D04Xclass
 		
 		
 		
-		echo"<meta http-equiv='refresh' content=\"0;url=guru.php?mode=R1D04X&kdeplj=$kdeplj&kdekls=$kdekls&pilihan=detil\">\n";//&thnajr=$thnajr
+		echo"<meta http-equiv='refresh' content=\"0;url=guru.php?mode=R1D04X&kdeplj=$kdeplj&kdekls=$kdekls&pilihan=detil\">\n";
  	}		
 }//akhir class
 ?>

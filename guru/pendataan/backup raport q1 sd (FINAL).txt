@@ -1,0 +1,384 @@
+while ($id<99)
+	{
+		//menampilkan data dari hasil query database
+		$nmasbj	=$cell[$j][1];
+		$kdeplj	=$cell[$j][2];
+		$kkm	=$cell[$j][3];
+		$nliakh	=$cell[$j][6];
+		
+		//$q1		=$cell[$j][7];
+		//$q2		=$cell[$j][8];
+		
+		//$q3		=$cell[$j][9];
+		//$q4		=$cell[$j][10];
+		//$av1	= ($q1 + $q2) / 2;
+		
+		$q1K='';
+		$q1S='';
+		
+		$lgK='';
+		$lgS='';
+		
+		$ave1KS='';
+		$lgKS='';
+		
+		$lg7='';
+		
+		
+		
+		//AWAL BUATAN BARU
+		$str_vis_d = '';
+		
+		if( ($kdekls=='P-1A' AND $kdeplj=='COM') OR ($kdekls=='P-1B' AND $kdeplj=='COM') OR ($kdekls=='P-1C' AND $kdeplj=='COM') OR ($kdekls=='P-1D' AND $kdeplj=='COM') )
+		{
+			$str_vis_d = 'hidden';
+		}
+		else
+		{
+			$str_vis_d = 'visible';
+		}
+		
+		echo"
+			<tr style='visibility: $str_vis_d'>
+		";
+		//AKHIR BUATAN BARU
+		
+		
+		
+		if($nmasbj!='')
+		{
+			if(substr($nmasbj,0,1)=='/')
+			{
+				$nmasbj 	=str_replace("/","","$nmasbj");
+				/*$pdf->SetFont('Arial','B',12);
+				$pdf->SetFillColor(204,204,204);
+				$pdf->Cell(6.2	,0.6,$nmasbj,'LRTB',0,L,true);*/		//A		6.2	,0.5
+				
+				
+				
+				//AWAL BUATAN BARU
+				echo"
+					<td>
+						$nmasbj
+					</td>
+				";
+				//AKHIR BUATAN BARU
+				
+				
+				
+				$nliakh	='';
+				
+			}
+			else
+			{
+				/*$pdf->SetFont('Arial','',12);
+				$pdf->SetFillColor(255,255,255);*/
+				
+				if(substr($nmasbj,0,1)!='=')
+				{
+					/*$pdf->Cell(0.6	,0.6,$no,'LRTB',0,C,true);*/				//0.6	,0.5					//$pdf->Cell( 1.25	,0.6,'',0,0,L);//1.5	,0.4
+					
+					
+					
+					//AWAL BUATAN BARU
+						echo"
+							<td align='right'>
+								$no
+							</td>
+						";
+					//AKHIR BUATAN BARU
+					
+					
+					
+				}
+				else
+				{
+					
+					/*$pdf->Cell(0.6	,0.6,'','LRTB',0,C,true);*/					//0.6	,0.5					//$pdf->Cell( 1.25	,0.6,'',0,0,L);//1.5	,0.4
+				}
+				
+				if(substr($nmasbj,0,1)!='=')
+				{
+					/*$pdf->SetFont('Arial','B',12);
+					$pdf->Cell(0.1	,0.6,'','LTB',0,R,true); 						// 0.6 $no.'.'		0.1	,0.5
+					$pdf->Cell(7.1	,0.6,$nmasbj,'RTB',0,L,true);*/					//5.6	,0.5
+					
+					
+					
+					//AWAL BUATAN BARU
+						echo"
+								<td>
+									$nmasbj
+								</td>
+						";
+					//AKHIR BUATAN BARU
+					
+					
+					
+					$no++;
+				}
+				else
+				{
+					$nmasbj 	=str_replace("=","","$nmasbj");
+					/*$pdf->Cell(5.7	,0.5,'        '.$nmasbj,'LRTB',0,L,true);*/ // 6.2
+					
+					
+					
+					//AWAL BUATAN BARU
+						echo"
+								<td>
+									$nmasbj
+								</td>
+							
+							</tr>
+						";
+					//AKHIR BUATAN BARU
+				}	
+				
+				
+				
+			}	
+			
+			
+			
+			$qry ="	SELECT 		t_prgrptps_sd.*
+						FROM 		t_prgrptps_sd
+						WHERE		t_prgrptps_sd.nis='$nis'		AND 
+									
+									t_prgrptps_sd.kdeplj='$kdeplj'"; // menghasilka per siswa per subjek (nilai akhir q1/q2/q3/q4)
+			$rsl=mysql_query($qry) or die('Query gagal');
+			$dat =mysql_fetch_array($rsl);
+			
+			/*$q1STK=$dat['st'.$sms.$midtrm."9"]; // q1
+			$q1STS=$dat['st_'.$sms.$midtrm."9"]; // q1
+			$q1av7=$dat['akh'.$sms.$midtrm]; // q1
+			
+			$q1K = $q1STK;
+			$q1S = $q1STS;
+			
+			$ave1KS = ( $q1K + $q1S ) / 2;*/
+				
+			$q1fgk=$dat['fgk'.'1'.'1'];//q1
+			$q2fgk=$dat['fgk'.'1'.'2'];//q2
+			
+			$q1fgs=$dat['fgs'.'1'.'1'];//q1
+			$q2fgs=$dat['fgs'.'1'.'2'];//q2
+			
+			$kf = number_format( ($q1fgk+$q2fgk)/2 ,0,',','.');
+			$sf = number_format( ($q1fgs+$q2fgs)/2 ,0,',','.');
+			
+			$av = number_format( ($kf+$sf)/2 ,0,',','.');
+			
+			$q2aff=$dat['aff'.$sms.$midtrm];//q2//.'1'.'2'
+			
+			
+			
+			//AWAL BUATAN BARU
+			if ( $q2aff >= 90.00 AND $q2aff <= 100.00 )
+				$lg7 = 'A';
+			else if ( $q2aff >= 80.00 AND $q2aff <= 89.99 )
+				$lg7 = 'B';
+			else if ( $q2aff >= 70.00 AND $q2aff <= 79.99 )
+				$lg7 = 'C';
+			else if ( $q2aff >= 0.00 AND $q2aff <= 69.99 )
+				$lg7 = 'D';
+			else
+				$lg7 = 'ERR';
+			//AKHIR BAUTAN BARU
+			
+			
+				
+			/*if($q2aff>100)
+				$lg7 = 'ERR';
+			else if($q2aff>=91.5)
+				$lg7 = 'A';
+			else if($q2aff>=83.25)
+				$lg7 = 'A-';
+			else if($q2aff>=75)
+				$lg7 = 'B+';
+			else if($q2aff>=66.5)
+				$lg7 = 'B';
+			else if($q2aff>=58.25)
+				$lg7 = 'B-';
+			else if($q2aff>=41.5)
+				$lg7 = "C";
+			else if($q2aff>=33.25)
+				$lg7 = "C-";
+			else if($q2aff>=25)
+				$lg7 = "D+";
+			else //if($q2aff>=0)
+				$lg7 = "D";*/
+			
+			
+			
+			if( ($kdekls=='P-1A' AND $kdeplj=='COM') OR ($kdekls=='P-1B' AND $kdeplj=='COM') OR ($kdekls=='P-1C' AND $kdeplj=='COM') OR ($kdekls=='P-1D' AND $kdeplj=='COM') )
+			{
+				/*$pdf->SetFillColor(204,204,204);*/
+			}
+			else
+			{
+				/*$pdf->SetFillColor(255,255,255);*/
+			}
+			
+			
+			
+			//AWAL BUATAN BARU
+			echo"
+				<td align='center' width='6.5%'>
+					$q1fgk
+				</td>
+				<td align='center' width='6.5%'>
+					$q2fgk
+				</td>
+			";
+			//AKHIR BUATAN BARU
+			
+			
+			
+			/*$pdf->SetFont('Arial','',12);
+			$pdf->Cell( 1.5	,0.6,$q1fgk,'LRTB',0,C,true);				//$q1K
+			$pdf->Cell( 1.5,0.6,$q2fgk,'LRTB',0,C,true);*/				//K//$lgK
+			
+			if( ($kdekls=='P-1A' AND $kdeplj=='COM') OR ($kdekls=='P-1B' AND $kdeplj=='COM') OR ($kdekls=='P-1C' AND $kdeplj=='COM') OR ($kdekls=='P-1D' AND $kdeplj=='COM') )
+			{
+				/*$pdf->SetFillColor(204,204,204);*/
+				$kf='';
+			}
+			else
+			{
+				//$pdf->SetFillColor(0, 183, 235);
+			}
+			
+			
+			
+			//AWAL BUATAN BARU
+			echo"
+				<td align='center' width='6.5%' bgcolor='lightgrey'>
+					$kf
+				</td>
+			";
+			//AKHIR BUATAN BARU
+			
+			
+			
+			/*$pdf->Cell( 1.5	,0.6,$kf,'LRTB',0,C,true);*///S//$q1S
+			
+			
+			
+			if( ($kdekls=='P-1A' AND $kdeplj=='COM') OR ($kdekls=='P-1B' AND $kdeplj=='COM') OR ($kdekls=='P-1C' AND $kdeplj=='COM') OR ($kdekls=='P-1D' AND $kdeplj=='COM') )
+			{
+				/*$pdf->SetFillColor(204,204,204);*/
+			}
+			else
+			{
+				/*$pdf->SetFillColor(255,255,255);*/
+			}
+			
+			
+			
+			//AWAL BUATAN BARU
+			echo"
+				<td align='center' width='6.5%'>
+					$q1fgs
+				</td>
+				<td align='center' width='6.5%'>
+					$q2fgs
+				</td>
+			";
+			//AKHIR BUATAN BARU
+			
+			
+			
+			/*$pdf->Cell( 1.5,0.6,$q1fgs,'LRTB',0,C,true);//$lgS
+			$pdf->Cell( 1.5	,0.6,$q2fgs,'LRTB',0,C,true);*///$ave1KS
+			
+			if( ($kdekls=='P-1A' AND $kdeplj=='COM') OR ($kdekls=='P-1B' AND $kdeplj=='COM') OR ($kdekls=='P-1C' AND $kdeplj=='COM') OR ($kdekls=='P-1D' AND $kdeplj=='COM') )
+			{
+				/*$pdf->SetFillColor(204,204,204);*/
+				$sf='';
+			}
+			else
+			{
+				//$pdf->SetFillColor(0, 183, 235);
+			}
+				
+			
+			
+			//AWAL BUATAN BARU
+			echo"
+				<td align='center' width='6.5%' bgcolor='lightgrey'>
+					$sf
+				</td>
+			";
+			//AKHIR BUATAN BARU
+			
+			
+			
+			/*$pdf->Cell( 1.5	,0.6,$sf,'LRTB',0,C,true);*///$lgKS
+			
+			
+			
+			if( ($kdekls=='P-1A' AND $kdeplj=='COM') OR ($kdekls=='P-1B' AND $kdeplj=='COM') OR ($kdekls=='P-1C' AND $kdeplj=='COM') OR ($kdekls=='P-1D' AND $kdeplj=='COM') )
+			{
+				/*$pdf->SetFillColor(204,204,204);*/
+				$av='';
+			}
+			else
+			{
+				//$pdf->SetFillColor(255, 255, 0);
+			}
+				
+			
+			
+			//AWAL BUATAN BARU
+			echo"
+				<td align='center' width='6.5%' bgcolor='yellow'>
+					$av
+				</td>
+			";
+			//AKHIR BUATAN BARU
+			
+			
+			
+			/*$pdf->Cell( 1.5	,0.6,$av,'LRTB',0,C,true);*///$lg7
+			
+			
+			
+			if( ($kdekls=='P-1A' AND $kdeplj=='COM') OR ($kdekls=='P-1B' AND $kdeplj=='COM') OR ($kdekls=='P-1C' AND $kdeplj=='COM') OR ($kdekls=='P-1D' AND $kdeplj=='COM') )
+			{
+				/*$pdf->SetFillColor(204,204,204);*/
+				$lg7='';
+			}
+			else
+			{
+				/*$pdf->SetFillColor(255, 255, 255);*/
+			}
+			
+			
+			
+			//AWAL BUATAN BARU
+			echo"
+					<td align='center'>
+						$lg7
+					</td>
+				</tr>
+			";
+			//AKHIR BUATAN BARU
+			
+			
+			
+			/*$pdf->Cell( 1.5	,0.6,$lg7,'LRTB',0,C,true);
+			
+			
+			
+			$pdf->SetTextColor(0,0,0);
+			
+			$pdf->Ln();*/
+		}	
+		
+		
+		
+		$j++;
+		$id++;
+		//$id=$cell[$j][0];
+	}

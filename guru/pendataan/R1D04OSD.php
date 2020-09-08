@@ -99,15 +99,18 @@ class R1D04OSDclass
 								TYPE		='text'
 								SIZE		='10'
 								MAXLENGTH	='10'
-								VALUE 		='$tglctk'
+								VALUE 		='16-10-2020'
 								ID			='tglctk'
-								ONKEYPRESS	='return enter(this,event)'>
+								ONKEYPRESS	='return enter(this,event)'
+								
+								/>
 						<IMG onClick='WdatePicker({el:tglctk});' src='../js/DatePicker/skin/datePicker.gif' WIDTH='16' HEIGHT='16' align='absmiddle'>
 					</TD>
 				</TR>		
 				<!--<tr>
 					<td>Tahun Pelajaran</td><td> : 
 						
+						$tglctk
 						<input type='text' NAME='thnajr' ID='thnajr' value='2018-2019' readonly/>
 						
 					</td>

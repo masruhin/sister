@@ -607,9 +607,6 @@ while($y<$x)
 	//$no =1;
 	//$ttlakh=0;
 	//$jmlplj=0;
-	
-	
-	
 	//$id=$cell[$j][0];
 	
 	
@@ -629,6 +626,22 @@ while($y<$x)
 			
 			$q1K_RLG = $q1STK_RLG;
 			$q1S_RLG = $q1STS_RLG;
+			
+			
+			
+			//AWAL BUATAN BARU
+			if ( $q1K_RLG < 60 )
+				$q1K_RLG = 60;
+			else if ( $q1K_RLG == 100 )
+				$q1K_RLG = 99;
+			
+			if ( $q1S_RLG < 60 )
+				$q1S_RLG = 60;
+			else if ( $q1S_RLG == 100 )
+				$q1S_RLG = 99;
+			//AKHIR BUATAN BARU
+					
+			
 			
 			$ave1KS_RLG = ( $q1K_RLG + $q1S_RLG ) / 2;
 			
@@ -696,6 +709,22 @@ while($y<$x)
 			$q1K_CME = $q1STK_CME;
 			$q1S_CME = $q1STS_CME;
 			
+			
+			
+			//AWAL BUATAN BARU
+			if ( $q1K_CME < 60 )
+				$q1K_CME = 60;
+			else if ( $q1K_CME == 100 )
+				$q1K_CME = 99;
+			
+			if ( $q1S_CME < 60 )
+				$q1S_CME = 60;
+			else if ( $q1S_CME == 100 )
+				$q1S_CME = 99;
+			//AKHIR BUATAN BARU
+			
+			
+			
 			$ave1KS_CME = ( $q1K_CME + $q1S_CME ) / 2;
 			
 			if ( $q1K_CME >= 90.00 AND $q1K_CME <= 100.00 )
@@ -761,6 +790,22 @@ while($y<$x)
 			
 			$q1K_BIN = $q1STK_BIN;
 			$q1S_BIN = $q1STS_BIN;
+			
+			
+			
+			//AWAL BUATAN BARU
+			if ( $q1K_BIN < 60 )
+				$q1K_BIN = 60;
+			else if ( $q1K_BIN == 100 )
+				$q1K_BIN = 99;
+			
+			if ( $q1S_BIN < 60 )
+				$q1S_BIN = 60;
+			else if ( $q1S_BIN == 100 )
+				$q1S_BIN = 99;
+			//AKHIR BUATAN BARU
+			
+			
 			
 			$ave1KS_BIN = ( $q1K_BIN + $q1S_BIN ) / 2;
 			
@@ -828,6 +873,22 @@ while($y<$x)
 			$q1K_MTH = $q1STK_MTH;
 			$q1S_MTH = $q1STS_MTH;
 			
+			
+			
+			//AWAL BUATAN BARU
+			if ( $q1K_MTH < 60 )
+				$q1K_MTH = 60;
+			else if ( $q1K_MTH == 100 )
+				$q1K_MTH = 99;
+			
+			if ( $q1S_MTH < 60 )
+				$q1S_MTH = 60;
+			else if ( $q1S_MTH == 100 )
+				$q1S_MTH = 99;
+			//AKHIR BUATAN BARU
+			
+			
+			
 			$ave1KS_MTH = ( $q1K_MTH + $q1S_MTH ) / 2;
 			
 			if ( $q1K_MTH >= 90.00 AND $q1K_MTH <= 100.00 )
@@ -893,6 +954,22 @@ while($y<$x)
 			
 			$q1K_SCN = $q1STK_SCN;
 			$q1S_SCN = $q1STS_SCN;
+			
+			
+			
+			//AWAL BUATAN BARU
+			if ( $q1K_SCN < 60 )
+				$q1K_SCN = 60;
+			else if ( $q1K_SCN == 100 )
+				$q1K_SCN = 99;
+			
+			if ( $q1S_SCN < 60 )
+				$q1S_SCN = 60;
+			else if ( $q1S_SCN == 100 )
+				$q1S_SCN = 99;
+			//AKHIR BUATAN BARU
+			
+			
 			
 			$ave1KS_SCN = ( $q1K_SCN + $q1S_SCN ) / 2;
 			
@@ -960,6 +1037,22 @@ while($y<$x)
 			$q1K_SCLS = $q1STK_SCLS;
 			$q1S_SCLS = $q1STS_SCLS;
 			
+			
+			
+			//AWAL BUATAN BARU
+			if ( $q1K_SCLS < 60 )
+				$q1K_SCLS = 60;
+			else if ( $q1K_SCLS == 100 )
+				$q1K_SCLS = 99;
+			
+			if ( $q1S_SCLS < 60 )
+				$q1S_SCLS = 60;
+			else if ( $q1S_SCLS == 100 )
+				$q1S_SCLS = 99;
+			//AKHIR BUATAN BARU
+			
+			
+			
 			$ave1KS_SCLS = ( $q1K_SCLS + $q1S_SCLS ) / 2;
 			
 			if ( $q1K_SCLS >= 90.00 AND $q1K_SCLS <= 100.00 )
@@ -1025,6 +1118,22 @@ while($y<$x)
 			
 			$q1K_ART = $q1STK_ART;
 			$q1S_ART = $q1STS_ART;
+			
+			
+			
+			//AWAL BUATAN BARU
+			if ( $q1K_ART < 60 )
+				$q1K_ART = 60;
+			else if ( $q1K_ART == 100 )
+				$q1K_ART = 99;
+			
+			if ( $q1S_ART < 60 )
+				$q1S_ART = 60;
+			else if ( $q1S_ART == 100 )
+				$q1S_ART = 99;
+			//AKHIR BUATAN BARU
+			
+			
 			
 			$ave1KS_ART = ( $q1K_ART + $q1S_ART ) / 2;
 			
@@ -1092,6 +1201,22 @@ while($y<$x)
 			$q1K_PE = $q1STK_PE;
 			$q1S_PE = $q1STS_PE;
 			
+			
+			
+			//AWAL BUATAN BARU
+			if ( $q1K_PE < 60 )
+				$q1K_PE = 60;
+			else if ( $q1K_PE == 100 )
+				$q1K_PE = 99;
+			
+			if ( $q1S_PE < 60 )
+				$q1S_PE = 60;
+			else if ( $q1S_PE == 100 )
+				$q1S_PE = 99;
+			//AKHIR BUATAN BARU
+			
+			
+			
 			$ave1KS_PE = ( $q1K_PE + $q1S_PE ) / 2;
 			
 			if ( $q1K_PE >= 90.00 AND $q1K_PE <= 100.00 )
@@ -1157,6 +1282,22 @@ while($y<$x)
 			
 			$q1K_ENG = $q1STK_ENG;
 			$q1S_ENG = $q1STS_ENG;
+			
+			
+			
+			//AWAL BUATAN BARU
+			if ( $q1K_ENG < 60 )
+				$q1K_ENG = 60;
+			else if ( $q1K_ENG == 100 )
+				$q1K_ENG = 99;
+			
+			if ( $q1S_ENG < 60 )
+				$q1S_ENG = 60;
+			else if ( $q1S_ENG == 100 )
+				$q1S_ENG = 99;
+			//AKHIR BUATAN BARU
+			
+			
 			
 			$ave1KS_ENG = ( $q1K_ENG + $q1S_ENG ) / 2;
 			
@@ -1224,6 +1365,22 @@ while($y<$x)
 			$q1K_MND = $q1STK_MND;
 			$q1S_MND = $q1STS_MND;
 			
+			
+			
+			//AWAL BUATAN BARU
+			if ( $q1K_MND < 60 )
+				$q1K_MND = 60;
+			else if ( $q1K_MND == 100 )
+				$q1K_MND = 99;
+			
+			if ( $q1S_MND < 60 )
+				$q1S_MND = 60;
+			else if ( $q1S_MND == 100 )
+				$q1S_MND = 99;
+			//AKHIR BUATAN BARU
+			
+			
+			
 			$ave1KS_MND = ( $q1K_MND + $q1S_MND ) / 2;
 			
 			if ( $q1K_MND >= 90.00 AND $q1K_MND <= 100.00 )
@@ -1290,6 +1447,22 @@ while($y<$x)
 			$q1K_COM = $q1STK_COM;
 			$q1S_COM = $q1STS_COM;
 			
+			
+			
+			//AWAL BUATAN BARU
+			if ( $q1K_COM < 60 )
+				$q1K_COM = 60;
+			else if ( $q1K_COM == 100 )
+				$q1K_COM = 99;
+			
+			if ( $q1S_COM < 60 )
+				$q1S_COM = 60;
+			else if ( $q1S_COM == 100 )
+				$q1S_COM = 99;
+			//AKHIR BUATAN BARU
+			
+			
+			
 			$ave1KS_COM = ( $q1K_COM + $q1S_COM ) / 2;
 			
 			if ( $q1K_COM >= 90.00 AND $q1K_COM <= 100.00 )
@@ -1340,14 +1513,6 @@ while($y<$x)
 			
 			
 			
-			/*if( ($kdekls=='P-1A' AND $kdeplj=='COM') OR ($kdekls=='P-1B' AND $kdeplj=='COM') OR ($kdekls=='P-1C' AND $kdeplj=='COM') OR ($kdekls=='P-1D' AND $kdeplj=='COM') )
-			{
-				$lgK_COM='';
-				$lgS_COM='';
-				$ave1KS_COM='';
-				$lgKS_COM='';
-				$lg7_COM='';
-			}*/
 			//AWAL BUATAN BARU
 			$str_vis_d = '';
 			

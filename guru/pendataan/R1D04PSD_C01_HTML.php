@@ -278,37 +278,13 @@ while($data =mysql_fetch_array($result))
 		
 		$n++;
 	}
-	/*$cell5[$i][$n+4]=$ttlakh1;
-	$cell5[$i][$n+5]=$ttlakh2;
-	$cell5[$i][$n+6]=number_format(($ttlakh1+$ttlakh2)/2,0,',','.');
-	$cell5[$i][$n+7]=$ttlakh;*/
+	
 	$i++;
 }
 $x=$i;
 
 
-foreach ($cell5 as $key => $row)
-{
-	$key_arr[$key] = $row[$n+7];
-}
-array_multisort($key_arr, SORT_DESC, $cell5);
 
-/*$y=0;
-while($y<$x)
-{
-	$cell5[$y][3]=$y+1;
-	$y++;
-}*/
-
-foreach ($cell5 as $key => $row)
-{
-	$key_arr[$key] = $row[1];
-}
-array_multisort($key_arr, SORT_ASC, $cell5);
-
-$bghw	=1;
-$bgprj	=1;
-$bgtes	=1;
 $y=0;
 
 //..--
@@ -323,6 +299,8 @@ while($y<$x)
 	$tgllhr	=$cell5[$y][4];
 	$tgllhr	=strtotime($tgllhr);
 	$tgllhr	=date('d F Y',$tgllhr);//'d-M-Y'
+	
+	
 	
 	//AWAL BUATAN BARU
 	$tanggallahir	=$cell5[$y][4];
@@ -357,6 +335,9 @@ while($y<$x)
 		$bulan_lahir = 'December';
 	else //if ( $bulan_lahir == 'Mar' )
 		$bulan_lahir = 'Err';
+	//AKHIR BUATAN BARU
+	
+	
 	
 	$query1 ="	SELECT 		t_setpsrpt.*
 				FROM 		t_setpsrpt
@@ -590,58 +571,7 @@ while($y<$x)
 	
 	
 	
-	/*$pdf->Open();
-	$pdf->AddPage();
-	//$pdf->Image($logo_pt ,1,0.75,2,2);
-	//$pdf->Image($logo_ttw,18,1,2,2);
-	$pdf->Ln(2.5);//4
-	$pdf->SetFont('arial','B',20);
-	$pdf->Cell( 1	,0.4,"",0,0,L); 
-	$pdf->Cell(17.5	,0.6, "STUDENT'S PROGRESS REPORT",0,0,C); // 19 $judul
-	$pdf->SetFont('Arial','B',18);
-	$pdf->Ln();
 	
-	$pdf->Cell( 1	,0.4,"",0,0,L);
-	$pdf->Cell(17.5	,0.6, "ACADEMIC YEAR ".$thnajr,0,0,C); // 19 $judul2
-	$pdf->Ln();
-	$pdf->SetFont('Arial','B',16);
-	$pdf->Cell( 1	,0.4,"",0,0,L);
-	$pdf->Cell(17.5	,0.6, "PRIMARY ".substr($kdekls,-2)." - ".$strkls,0,0,C);// 19 SAINT JOHN'S SCHOOL
-	$pdf->Ln();
-	$pdf->SetFont('Arial','B',6);
-	$pdf->Cell(17.5	,0.3, '',0,0,C); // 19 $alamat1_pt1
-	$pdf->Ln();
-	$pdf->Cell(17.5	,0.3, '',0,0,C); // 19 $alamat2_pt2
-	
-	$pdf->Ln(0.5);
-	$pdf->SetFont('Arial','',12);
-	$pdf->Cell( 6.5	,0.4,"",0,0,L); 
-	$pdf->Cell( 2	,0.4,"Semester : ",0,0,L); 
-	$pdf->SetFont('Arial','',12);
-	$pdf->Cell( 1.5	,0.4," ".$sms,0,0,L); //"     ".."     "
-	$pdf->Cell( 0.5	,0.4,"",0,0,L); 
-	$pdf->SetFont('Arial','',12);
-	$pdf->Cell( 1	,0.4,"Term : ",0,0,L); 
-	$pdf->SetFont('Arial','',12);
-	$pdf->Cell( 1.5	,0.4,"   ".$midtrm,0,0,L); //".$sms."=2//"     ".."     "
-	
-	$pdf->Ln(0.75);
-	$pdf->SetFont('Arial','',12);
-	$pdf->Cell( 4.5	,0.4,"",0,0,L); 
-	$pdf->Cell( 3	,0.4,"STUDENT NAME : ",0,0,L); 
-	$pdf->SetFont('Arial','B',12);
-	$pdf->Cell( 5.7	,0.4,"      ".$nmassw,0,0,L); //."                         "
-	
-	$pdf->Ln(0.5);
-	$pdf->SetFont('Arial','',12);
-	$pdf->Cell( 4.5	,0.4,"",0,0,L); 
-	$pdf->Cell( 3.5	,0.4,"STUDENT ID NO : ",0,0,L); 
-	$pdf->SetFont('Arial','',12);
-	$pdf->Cell( 2	,0.4,"  ".substr($nis,0,3)."          ",0,0,L); 
-	$pdf->SetFont('Arial','',12);
-	$pdf->Cell( 2.5	,0.4,"BIRTHDAY : ",0,0,L); 
-	$pdf->SetFont('Arial','',12);
-	$pdf->Cell( 2	,0.4,$tgllhr,0,0,L);*/ 
 	
 	
 	
@@ -649,439 +579,999 @@ while($y<$x)
 	
 	
 	
-	/*$pdf->Ln(0.75);
-	$pdf->SetFont('Arial','B',12);
-	$pdf->SetFillColor(255,255,255);
-	//$pdf->Cell( 1.25	,0.6,'',0,0,L); 
-	$pdf->Cell( 19.8	,0.6,'ACADEMIC PERFORMANCE'		,'LRTB',0,C,true);
 	
-	$pdf->Ln();
-	$pdf->SetFont('Arial','B',12);
-	//$pdf->Cell( 1.25	,0.6,'',0,0,L); 
-	$pdf->Cell( 7.8	,1.8,'SUBJECT'		,'LRTB',0,C,true);
-	$pdf->Cell( 10.5	,0.6,'CLASSROOM PERFORMANCE'		,'LRTB',0,C,true);
-	$pdf->Cell( 1.5	,1.8,'ATT'		,'LRTB',0,C,true);//ATTITUDE
-	
-	$pdf->Ln(0.6);
-	//$pdf->Cell( 1.25	,0.6,'',0,0,L); 
-	$pdf->Cell( 7.8	,1.8,''		,0,0,C,false);
-	$pdf->Cell( 4.5	,0.6,'KNOWLEDGE'		,'LRTB',0,C,true);
-	$pdf->Cell( 4.5	,0.6,'SKILLS'		,'LRTB',0,C,true);
-	//$pdf->SetFillColor(255, 255, 0);
-	$pdf->Cell( 1.5		,1.2,'AV'		,'LRTB',0,C,true);//AVERAGE
-	$pdf->SetFillColor(255, 255, 255);
-	
-	$pdf->Ln(0.6);
-	//$pdf->Cell( 1.25	,0.6,'',0,0,L); 
-	$pdf->Cell( 7.8	,1.8,''		,0,0,C,false);
-	$pdf->Cell( 1.5	,0.6,'Q1'		,'LRTB',0,C,true);
-	$pdf->Cell( 1.5,0.6,'Q2'		,'LRTB',0,C,true);
-	//$pdf->SetFillColor(0, 183, 235);
-	$pdf->Cell( 1.5	,0.6,'FINAL'		,'LRTB',0,C,true);
-	$pdf->SetFillColor(255, 255, 255);
-	$pdf->Cell( 1.5,0.6,'Q1'		,'LRTB',0,C,true);
-	$pdf->Cell( 1.5	,0.6,'Q2'		,'LRTB',0,C,true);
-	//$pdf->SetFillColor(0, 183, 235);
-	$pdf->Cell( 1.5	,0.6,'FINAL'		,'LRTB',0,C,true);
-	$pdf->SetFillColor(255, 255, 255);
-	$pdf->Ln();*/
 	//------------------------------- Mata Pelajaran Kurikulum Nasional
-	$j	=1;
-	$no =1;
-	//$ttlakh=0;
-	//$jmlplj=0;
-	/*$pdf->SetFont('Arial','B',12);
-	$pdf->SetFillColor(204,204,204);*/
-	$id=$cell[$j][0];
-	
-	
+	//$j	=1;
+	//$no =1;
+	//$id=$cell[$j][0];
 	//echo"$id - ";
 	
 	
-	while ($id<99)
-	{
-		//menampilkan data dari hasil query database
-		$nmasbj	=$cell[$j][1];
-		$kdeplj	=$cell[$j][2];
-		$kkm	=$cell[$j][3];
-		$nliakh	=$cell[$j][6];
-		
-		//$q1		=$cell[$j][7];
-		//$q2		=$cell[$j][8];
-		
-		//$q3		=$cell[$j][9];
-		//$q4		=$cell[$j][10];
-		//$av1	= ($q1 + $q2) / 2;
-		
-		$q1K='';
-		$q1S='';
-		
-		$lgK='';
-		$lgS='';
-		
-		$ave1KS='';
-		$lgKS='';
-		
-		$lg7='';
-		
-		
-		
-		//AWAL BUATAN BARU
-		$str_vis_d = '';
-		
-		if( ($kdekls=='P-1A' AND $kdeplj=='COM') OR ($kdekls=='P-1B' AND $kdeplj=='COM') OR ($kdekls=='P-1C' AND $kdeplj=='COM') OR ($kdekls=='P-1D' AND $kdeplj=='COM') )
-		{
-			$str_vis_d = 'hidden';
-		}
-		else
-		{
-			$str_vis_d = 'visible';
-		}
-		
-		echo"
-			<tr style='visibility: $str_vis_d'>
-		";
-		//AKHIR BUATAN BARU
-		
-		
-		
-		if($nmasbj!='')
-		{
-			if(substr($nmasbj,0,1)=='/')
-			{
-				$nmasbj 	=str_replace("/","","$nmasbj");
-				/*$pdf->SetFont('Arial','B',12);
-				$pdf->SetFillColor(204,204,204);
-				$pdf->Cell(6.2	,0.6,$nmasbj,'LRTB',0,L,true);*/		//A		6.2	,0.5
-				
-				
-				
-				//AWAL BUATAN BARU
-				echo"
-					<td>
-						$nmasbj
-					</td>
-				";
-				//AKHIR BUATAN BARU
-				
-				
-				
-				$nliakh	='';
-				
-			}
-			else
-			{
-				/*$pdf->SetFont('Arial','',12);
-				$pdf->SetFillColor(255,255,255);*/
-				
-				if(substr($nmasbj,0,1)!='=')
-				{
-					/*$pdf->Cell(0.6	,0.6,$no,'LRTB',0,C,true);*/				//0.6	,0.5					//$pdf->Cell( 1.25	,0.6,'',0,0,L);//1.5	,0.4
-					
-					
-					
-					//AWAL BUATAN BARU
-						echo"
-							<td align='right'>
-								$no
-							</td>
-						";
-					//AKHIR BUATAN BARU
-					
-					
-					
-				}
-				else
-				{
-					
-					/*$pdf->Cell(0.6	,0.6,'','LRTB',0,C,true);*/					//0.6	,0.5					//$pdf->Cell( 1.25	,0.6,'',0,0,L);//1.5	,0.4
-				}
-				
-				if(substr($nmasbj,0,1)!='=')
-				{
-					/*$pdf->SetFont('Arial','B',12);
-					$pdf->Cell(0.1	,0.6,'','LTB',0,R,true); 						// 0.6 $no.'.'		0.1	,0.5
-					$pdf->Cell(7.1	,0.6,$nmasbj,'RTB',0,L,true);*/					//5.6	,0.5
-					
-					
-					
-					//AWAL BUATAN BARU
-						echo"
-								<td>
-									$nmasbj
-								</td>
-						";
-					//AKHIR BUATAN BARU
-					
-					
-					
-					$no++;
-				}
-				else
-				{
-					$nmasbj 	=str_replace("=","","$nmasbj");
-					/*$pdf->Cell(5.7	,0.5,'        '.$nmasbj,'LRTB',0,L,true);*/ // 6.2
-					
-					
-					
-					//AWAL BUATAN BARU
-						echo"
-								<td>
-									$nmasbj
-								</td>
-							
-							</tr>
-						";
-					//AKHIR BUATAN BARU
-				}	
-				
-				
-				
-			}	
-			
-			
-			
-			$qry ="	SELECT 		t_prgrptps_sd.*
+	
+			//RLG
+			$qry_RLG ="	SELECT 		t_prgrptps_sd.*
 						FROM 		t_prgrptps_sd
 						WHERE		t_prgrptps_sd.nis='$nis'		AND 
 									
-									t_prgrptps_sd.kdeplj='$kdeplj'"; // menghasilka per siswa per subjek (nilai akhir q1/q2/q3/q4)
-			$rsl=mysql_query($qry) or die('Query gagal');
-			$dat =mysql_fetch_array($rsl);
+									t_prgrptps_sd.kdeplj='RLG'"; // menghasilka per siswa per subjek (nilai akhir q1/q2/q3/q4)
+			$rsl_RLG=mysql_query($qry_RLG) or die('Query gagal');
+			$dat_RLG=mysql_fetch_array($rsl_RLG);
 			
-			/*$q1STK=$dat['st'.$sms.$midtrm."9"]; // q1
-			$q1STS=$dat['st_'.$sms.$midtrm."9"]; // q1
-			$q1av7=$dat['akh'.$sms.$midtrm]; // q1
+			$q1fgk_RLG=$dat_RLG['fgk'.'1'.'1'];//q1
+			$q2fgk_RLG=$dat_RLG['fgk'.'1'.'2'];//q2
 			
-			$q1K = $q1STK;
-			$q1S = $q1STS;
-			
-			$ave1KS = ( $q1K + $q1S ) / 2;*/
-				
-			$q1fgk=$dat['fgk'.'1'.'1'];//q1
-			$q2fgk=$dat['fgk'.'1'.'2'];//q2
-			
-			$q1fgs=$dat['fgs'.'1'.'1'];//q1
-			$q2fgs=$dat['fgs'.'1'.'2'];//q2
-			
-			$kf = number_format( ($q1fgk+$q2fgk)/2 ,0,',','.');
-			$sf = number_format( ($q1fgs+$q2fgs)/2 ,0,',','.');
-			
-			$av = number_format( ($kf+$sf)/2 ,0,',','.');
-			
-			$q2aff=$dat['aff'.$sms.$midtrm];//q2//.'1'.'2'
-			
-			
+			$q1fgs_RLG=$dat_RLG['fgs'.'1'.'1'];//q1
+			$q2fgs_RLG=$dat_RLG['fgs'.'1'.'2'];//q2
 			
 			//AWAL BUATAN BARU
-			if ( $q2aff >= 90.00 AND $q2aff <= 100.00 )
-				$lg7 = 'A';
-			else if ( $q2aff >= 80.00 AND $q2aff <= 89.99 )
-				$lg7 = 'B';
-			else if ( $q2aff >= 70.00 AND $q2aff <= 79.99 )
-				$lg7 = 'C';
-			else if ( $q2aff >= 0.00 AND $q2aff <= 69.99 )
-				$lg7 = 'D';
-			else
-				$lg7 = 'ERR';
-			//AKHIR BAUTAN BARU
+			if ( $q1fgk_RLG < 60 )
+				$q1fgk_RLG = 60;
+			else if ( $q1fgk_RLG == 100 )
+				$q1fgk_RLG = 99;
 			
+			if ( $q2fgk_RLG < 60 )
+				$q2fgk_RLG = 60;
+			else if ( $q2fgk_RLG == 100 )
+				$q2fgk_RLG = 99;
 			
-				
-			/*if($q2aff>100)
-				$lg7 = 'ERR';
-			else if($q2aff>=91.5)
-				$lg7 = 'A';
-			else if($q2aff>=83.25)
-				$lg7 = 'A-';
-			else if($q2aff>=75)
-				$lg7 = 'B+';
-			else if($q2aff>=66.5)
-				$lg7 = 'B';
-			else if($q2aff>=58.25)
-				$lg7 = 'B-';
-			else if($q2aff>=41.5)
-				$lg7 = "C";
-			else if($q2aff>=33.25)
-				$lg7 = "C-";
-			else if($q2aff>=25)
-				$lg7 = "D+";
-			else //if($q2aff>=0)
-				$lg7 = "D";*/
+			if ( $q1fgs_RLG < 60 )
+				$q1fgs_RLG = 60;
+			else if ( $q1fgs_RLG == 100 )
+				$q1fgs_RLG = 99;
 			
+			if ( $q2fgs_RLG < 60 )
+				$q2fgs_RLG = 60;
+			else if ( $q2fgs_RLG == 100 )
+				$q2fgs_RLG = 99;
+			//AKHIR BUATAN BARU
 			
-			
-			if( ($kdekls=='P-1A' AND $kdeplj=='COM') OR ($kdekls=='P-1B' AND $kdeplj=='COM') OR ($kdekls=='P-1C' AND $kdeplj=='COM') OR ($kdekls=='P-1D' AND $kdeplj=='COM') )
-			{
-				/*$pdf->SetFillColor(204,204,204);*/
-			}
-			else
-			{
-				/*$pdf->SetFillColor(255,255,255);*/
-			}
-			
-			
+			$kf_RLG = number_format( ($q1fgk_RLG+$q2fgk_RLG)/2 ,0,',','.');
+			$sf_RLG = number_format( ($q1fgs_RLG+$q2fgs_RLG)/2 ,0,',','.');
+			$av_RLG = number_format( ($kf_RLG+$sf_RLG)/2 ,0,',','.');
+			$q2aff_RLG=$dat_RLG['aff'.$sms.$midtrm];//q2//.'1'.'2'
 			
 			//AWAL BUATAN BARU
-			echo"
-				<td align='center' width='6.5%'>
-					$q1fgk
-				</td>
-				<td align='center' width='6.5%'>
-					$q2fgk
-				</td>
-			";
+			if ( $q2aff_RLG >= 90.00 AND $q2aff_RLG <= 100.00 )
+				$lg7_RLG = 'A';
+			else if ( $q2aff_RLG >= 80.00 AND $q2aff_RLG <= 89.99 )
+				$lg7_RLG = 'B';
+			else if ( $q2aff_RLG >= 70.00 AND $q2aff_RLG <= 79.99 )
+				$lg7_RLG = 'C';
+			else if ( $q2aff_RLG >= 0.00 AND $q2aff_RLG <= 69.99 )
+				$lg7_RLG = 'D';
+			else
+				$lg7_RLG = 'ERR';
 			//AKHIR BUATAN BARU
 			
 			
 			
-			/*$pdf->SetFont('Arial','',12);
-			$pdf->Cell( 1.5	,0.6,$q1fgk,'LRTB',0,C,true);				//$q1K
-			$pdf->Cell( 1.5,0.6,$q2fgk,'LRTB',0,C,true);*/				//K//$lgK
+			//CME
+			$qry_CME ="	SELECT 		t_prgrptps_sd.*
+						FROM 		t_prgrptps_sd
+						WHERE		t_prgrptps_sd.nis='$nis'		AND 
+									
+									t_prgrptps_sd.kdeplj='CME'"; // menghasilka per siswa per subjek (nilai akhir q1/q2/q3/q4)
+			$rsl_CME=mysql_query($qry_CME) or die('Query gagal');
+			$dat_CME=mysql_fetch_array($rsl_CME);
 			
-			if( ($kdekls=='P-1A' AND $kdeplj=='COM') OR ($kdekls=='P-1B' AND $kdeplj=='COM') OR ($kdekls=='P-1C' AND $kdeplj=='COM') OR ($kdekls=='P-1D' AND $kdeplj=='COM') )
-			{
-				/*$pdf->SetFillColor(204,204,204);*/
-				$kf='';
-			}
-			else
-			{
-				//$pdf->SetFillColor(0, 183, 235);
-			}
+			$q1fgk_CME=$dat_CME['fgk'.'1'.'1'];//q1
+			$q2fgk_CME=$dat_CME['fgk'.'1'.'2'];//q2
 			
-			
+			$q1fgs_CME=$dat_CME['fgs'.'1'.'1'];//q1
+			$q2fgs_CME=$dat_CME['fgs'.'1'.'2'];//q2
 			
 			//AWAL BUATAN BARU
-			echo"
-				<td align='center' width='6.5%' bgcolor='lightgrey'>
-					$kf
-				</td>
-			";
+			if ( $q1fgk_CME < 60 )
+				$q1fgk_CME = 60;
+			else if ( $q1fgk_CME == 100 )
+				$q1fgk_CME = 99;
+			
+			if ( $q2fgk_CME < 60 )
+				$q2fgk_CME = 60;
+			else if ( $q2fgk_CME == 100 )
+				$q2fgk_CME = 99;
+			
+			if ( $q1fgs_CME < 60 )
+				$q1fgs_CME = 60;
+			else if ( $q1fgs_CME == 100 )
+				$q1fgs_CME = 99;
+			
+			if ( $q2fgs_CME < 60 )
+				$q2fgs_CME = 60;
+			else if ( $q2fgs_CME == 100 )
+				$q2fgs_CME = 99;
+			//AKHIR BUATAN BARU
+			
+			$kf_CME = number_format( ($q1fgk_CME+$q2fgk_CME)/2 ,0,',','.');
+			$sf_CME = number_format( ($q1fgs_CME+$q2fgs_CME)/2 ,0,',','.');
+			$av_CME = number_format( ($kf_CME+$sf_CME)/2 ,0,',','.');
+			$q2aff_CME=$dat_CME['aff'.$sms.$midtrm];//q2//.'1'.'2'
+			
+			//AWAL BUATAN BARU
+			if ( $q2aff_CME >= 90.00 AND $q2aff_CME <= 100.00 )
+				$lg7_CME = 'A';
+			else if ( $q2aff_CME >= 80.00 AND $q2aff_CME <= 89.99 )
+				$lg7_CME = 'B';
+			else if ( $q2aff_CME >= 70.00 AND $q2aff_CME <= 79.99 )
+				$lg7_CME = 'C';
+			else if ( $q2aff_CME >= 0.00 AND $q2aff_CME <= 69.99 )
+				$lg7_CME = 'D';
+			else
+				$lg7_CME = 'ERR';
 			//AKHIR BUATAN BARU
 			
 			
 			
-			/*$pdf->Cell( 1.5	,0.6,$kf,'LRTB',0,C,true);*///S//$q1S
+			//BIN
+			$qry_BIN ="	SELECT 		t_prgrptps_sd.*
+						FROM 		t_prgrptps_sd
+						WHERE		t_prgrptps_sd.nis='$nis'		AND 
+									
+									t_prgrptps_sd.kdeplj='BIN'"; // menghasilka per siswa per subjek (nilai akhir q1/q2/q3/q4)
+			$rsl_BIN=mysql_query($qry_BIN) or die('Query gagal');
+			$dat_BIN=mysql_fetch_array($rsl_BIN);
 			
+			$q1fgk_BIN=$dat_BIN['fgk'.'1'.'1'];//q1
+			$q2fgk_BIN=$dat_BIN['fgk'.'1'.'2'];//q2
 			
-			
-			if( ($kdekls=='P-1A' AND $kdeplj=='COM') OR ($kdekls=='P-1B' AND $kdeplj=='COM') OR ($kdekls=='P-1C' AND $kdeplj=='COM') OR ($kdekls=='P-1D' AND $kdeplj=='COM') )
-			{
-				/*$pdf->SetFillColor(204,204,204);*/
-			}
-			else
-			{
-				/*$pdf->SetFillColor(255,255,255);*/
-			}
-			
-			
+			$q1fgs_BIN=$dat_BIN['fgs'.'1'.'1'];//q1
+			$q2fgs_BIN=$dat_BIN['fgs'.'1'.'2'];//q2
 			
 			//AWAL BUATAN BARU
-			echo"
-				<td align='center' width='6.5%'>
-					$q1fgs
-				</td>
-				<td align='center' width='6.5%'>
-					$q2fgs
-				</td>
-			";
+			if ( $q1fgk_BIN < 60 )
+				$q1fgk_BIN = 60;
+			else if ( $q1fgk_BIN == 100 )
+				$q1fgk_BIN = 99;
+			
+			if ( $q2fgk_BIN < 60 )
+				$q2fgk_BIN = 60;
+			else if ( $q2fgk_BIN == 100 )
+				$q2fgk_BIN = 99;
+			
+			if ( $q1fgs_BIN < 60 )
+				$q1fgs_BIN = 60;
+			else if ( $q1fgs_BIN == 100 )
+				$q1fgs_BIN = 99;
+			
+			if ( $q2fgs_BIN < 60 )
+				$q2fgs_BIN = 60;
+			else if ( $q2fgs_BIN == 100 )
+				$q2fgs_BIN = 99;
+			//AKHIR BUATAN BARU
+			
+			$kf_BIN = number_format( ($q1fgk_BIN+$q2fgk_BIN)/2 ,0,',','.');
+			$sf_BIN = number_format( ($q1fgs_BIN+$q2fgs_BIN)/2 ,0,',','.');
+			$av_BIN = number_format( ($kf_BIN+$sf_BIN)/2 ,0,',','.');
+			$q2aff_BIN=$dat_BIN['aff'.$sms.$midtrm];//q2//.'1'.'2'
+			
+			//AWAL BUATAN BARU
+			if ( $q2aff_BIN >= 90.00 AND $q2aff_BIN <= 100.00 )
+				$lg7_BIN = 'A';
+			else if ( $q2aff_BIN >= 80.00 AND $q2aff_BIN <= 89.99 )
+				$lg7_BIN = 'B';
+			else if ( $q2aff_BIN >= 70.00 AND $q2aff_BIN <= 79.99 )
+				$lg7_BIN = 'C';
+			else if ( $q2aff_BIN >= 0.00 AND $q2aff_BIN <= 69.99 )
+				$lg7_BIN = 'D';
+			else
+				$lg7_BIN = 'ERR';
 			//AKHIR BUATAN BARU
 			
 			
 			
-			/*$pdf->Cell( 1.5,0.6,$q1fgs,'LRTB',0,C,true);//$lgS
-			$pdf->Cell( 1.5	,0.6,$q2fgs,'LRTB',0,C,true);*///$ave1KS
+			//MTH
+			$qry_MTH ="	SELECT 		t_prgrptps_sd.*
+						FROM 		t_prgrptps_sd
+						WHERE		t_prgrptps_sd.nis='$nis'		AND 
+									
+									t_prgrptps_sd.kdeplj='MTH'"; // menghasilka per siswa per subjek (nilai akhir q1/q2/q3/q4)
+			$rsl_MTH=mysql_query($qry_MTH) or die('Query gagal');
+			$dat_MTH=mysql_fetch_array($rsl_MTH);
 			
-			if( ($kdekls=='P-1A' AND $kdeplj=='COM') OR ($kdekls=='P-1B' AND $kdeplj=='COM') OR ($kdekls=='P-1C' AND $kdeplj=='COM') OR ($kdekls=='P-1D' AND $kdeplj=='COM') )
-			{
-				/*$pdf->SetFillColor(204,204,204);*/
-				$sf='';
-			}
-			else
-			{
-				//$pdf->SetFillColor(0, 183, 235);
-			}
-				
+			$q1fgk_MTH=$dat_MTH['fgk'.'1'.'1'];//q1
+			$q2fgk_MTH=$dat_MTH['fgk'.'1'.'2'];//q2
 			
+			$q1fgs_MTH=$dat_MTH['fgs'.'1'.'1'];//q1
+			$q2fgs_MTH=$dat_MTH['fgs'.'1'.'2'];//q2
 			
 			//AWAL BUATAN BARU
-			echo"
-				<td align='center' width='6.5%' bgcolor='lightgrey'>
-					$sf
-				</td>
-			";
+			if ( $q1fgk_MTH < 60 )
+				$q1fgk_MTH = 60;
+			else if ( $q1fgk_MTH == 100 )
+				$q1fgk_MTH = 99;
+			
+			if ( $q2fgk_MTH < 60 )
+				$q2fgk_MTH = 60;
+			else if ( $q2fgk_MTH == 100 )
+				$q2fgk_MTH = 99;
+			
+			if ( $q1fgs_MTH < 60 )
+				$q1fgs_MTH = 60;
+			else if ( $q1fgs_MTH == 100 )
+				$q1fgs_MTH = 99;
+			
+			if ( $q2fgs_MTH < 60 )
+				$q2fgs_MTH = 60;
+			else if ( $q2fgs_MTH == 100 )
+				$q2fgs_MTH = 99;
+			//AKHIR BUATAN BARU
+			
+			$kf_MTH = number_format( ($q1fgk_MTH+$q2fgk_MTH)/2 ,0,',','.');
+			$sf_MTH = number_format( ($q1fgs_MTH+$q2fgs_MTH)/2 ,0,',','.');
+			$av_MTH = number_format( ($kf_MTH+$sf_MTH)/2 ,0,',','.');
+			$q2aff_MTH=$dat_MTH['aff'.$sms.$midtrm];//q2//.'1'.'2'
+			
+			//AWAL BUATAN BARU
+			if ( $q2aff_MTH >= 90.00 AND $q2aff_MTH <= 100.00 )
+				$lg7_MTH = 'A';
+			else if ( $q2aff_MTH >= 80.00 AND $q2aff_MTH <= 89.99 )
+				$lg7_MTH = 'B';
+			else if ( $q2aff_MTH >= 70.00 AND $q2aff_MTH <= 79.99 )
+				$lg7_MTH = 'C';
+			else if ( $q2aff_MTH >= 0.00 AND $q2aff_MTH <= 69.99 )
+				$lg7_MTH = 'D';
+			else
+				$lg7_MTH = 'ERR';
 			//AKHIR BUATAN BARU
 			
 			
 			
-			/*$pdf->Cell( 1.5	,0.6,$sf,'LRTB',0,C,true);*///$lgKS
+			//SCN
+			$qry_SCN ="	SELECT 		t_prgrptps_sd.*
+						FROM 		t_prgrptps_sd
+						WHERE		t_prgrptps_sd.nis='$nis'		AND 
+									
+									t_prgrptps_sd.kdeplj='SCN'"; // menghasilka per siswa per subjek (nilai akhir q1/q2/q3/q4)
+			$rsl_SCN=mysql_query($qry_SCN) or die('Query gagal');
+			$dat_SCN=mysql_fetch_array($rsl_SCN);
 			
+			$q1fgk_SCN=$dat_SCN['fgk'.'1'.'1'];//q1
+			$q2fgk_SCN=$dat_SCN['fgk'.'1'.'2'];//q2
 			
-			
-			if( ($kdekls=='P-1A' AND $kdeplj=='COM') OR ($kdekls=='P-1B' AND $kdeplj=='COM') OR ($kdekls=='P-1C' AND $kdeplj=='COM') OR ($kdekls=='P-1D' AND $kdeplj=='COM') )
-			{
-				/*$pdf->SetFillColor(204,204,204);*/
-				$av='';
-			}
-			else
-			{
-				//$pdf->SetFillColor(255, 255, 0);
-			}
-				
-			
+			$q1fgs_SCN=$dat_SCN['fgs'.'1'.'1'];//q1
+			$q2fgs_SCN=$dat_SCN['fgs'.'1'.'2'];//q2
 			
 			//AWAL BUATAN BARU
-			echo"
-				<td align='center' width='6.5%' bgcolor='yellow'>
-					$av
-				</td>
-			";
+			if ( $q1fgk_SCN < 60 )
+				$q1fgk_SCN = 60;
+			else if ( $q1fgk_SCN == 100 )
+				$q1fgk_SCN = 99;
+			
+			if ( $q2fgk_SCN < 60 )
+				$q2fgk_SCN = 60;
+			else if ( $q2fgk_SCN == 100 )
+				$q2fgk_SCN = 99;
+			
+			if ( $q1fgs_SCN < 60 )
+				$q1fgs_SCN = 60;
+			else if ( $q1fgs_SCN == 100 )
+				$q1fgs_SCN = 99;
+			
+			if ( $q2fgs_SCN < 60 )
+				$q2fgs_SCN = 60;
+			else if ( $q2fgs_SCN == 100 )
+				$q2fgs_SCN = 99;
+			//AKHIR BUATAN BARU
+			
+			$kf_SCN = number_format( ($q1fgk_SCN+$q2fgk_SCN)/2 ,0,',','.');
+			$sf_SCN = number_format( ($q1fgs_SCN+$q2fgs_SCN)/2 ,0,',','.');
+			$av_SCN = number_format( ($kf_SCN+$sf_SCN)/2 ,0,',','.');
+			$q2aff_SCN=$dat_SCN['aff'.$sms.$midtrm];//q2//.'1'.'2'
+			
+			//AWAL BUATAN BARU
+			if ( $q2aff_SCN >= 90.00 AND $q2aff_SCN <= 100.00 )
+				$lg7_SCN = 'A';
+			else if ( $q2aff_SCN >= 80.00 AND $q2aff_SCN <= 89.99 )
+				$lg7_SCN = 'B';
+			else if ( $q2aff_SCN >= 70.00 AND $q2aff_SCN <= 79.99 )
+				$lg7_SCN = 'C';
+			else if ( $q2aff_SCN >= 0.00 AND $q2aff_SCN <= 69.99 )
+				$lg7_SCN = 'D';
+			else
+				$lg7_SCN = 'ERR';
 			//AKHIR BUATAN BARU
 			
 			
 			
-			/*$pdf->Cell( 1.5	,0.6,$av,'LRTB',0,C,true);*///$lg7
+			//SCLS
+			$qry_SCLS ="	SELECT 		t_prgrptps_sd.*
+						FROM 		t_prgrptps_sd
+						WHERE		t_prgrptps_sd.nis='$nis'		AND 
+									
+									t_prgrptps_sd.kdeplj='SCLS'"; // menghasilka per siswa per subjek (nilai akhir q1/q2/q3/q4)
+			$rsl_SCLS=mysql_query($qry_SCLS) or die('Query gagal');
+			$dat_SCLS=mysql_fetch_array($rsl_SCLS);
+			
+			$q1fgk_SCLS=$dat_SCLS['fgk'.'1'.'1'];//q1
+			$q2fgk_SCLS=$dat_SCLS['fgk'.'1'.'2'];//q2
+			
+			$q1fgs_SCLS=$dat_SCLS['fgs'.'1'.'1'];//q1
+			$q2fgs_SCLS=$dat_SCLS['fgs'.'1'.'2'];//q2
+			
+			//AWAL BUATAN BARU
+			if ( $q1fgk_SCLS < 60 )
+				$q1fgk_SCLS = 60;
+			else if ( $q1fgk_SCLS == 100 )
+				$q1fgk_SCLS = 99;
+			
+			if ( $q2fgk_SCLS < 60 )
+				$q2fgk_SCLS = 60;
+			else if ( $q2fgk_SCLS == 100 )
+				$q2fgk_SCLS = 99;
+			
+			if ( $q1fgs_SCLS < 60 )
+				$q1fgs_SCLS = 60;
+			else if ( $q1fgs_SCLS == 100 )
+				$q1fgs_SCLS = 99;
+			
+			if ( $q2fgs_SCLS < 60 )
+				$q2fgs_SCLS = 60;
+			else if ( $q2fgs_SCLS == 100 )
+				$q2fgs_SCLS = 99;
+			//AKHIR BUATAN BARU
+			
+			$kf_SCLS = number_format( ($q1fgk_SCLS+$q2fgk_SCLS)/2 ,0,',','.');
+			$sf_SCLS = number_format( ($q1fgs_SCLS+$q2fgs_SCLS)/2 ,0,',','.');
+			$av_SCLS = number_format( ($kf_SCLS+$sf_SCLS)/2 ,0,',','.');
+			$q2aff_SCLS=$dat_SCLS['aff'.$sms.$midtrm];//q2//.'1'.'2'
+			
+			//AWAL BUATAN BARU
+			if ( $q2aff_SCLS >= 90.00 AND $q2aff_SCLS <= 100.00 )
+				$lg7_SCLS = 'A';
+			else if ( $q2aff_SCLS >= 80.00 AND $q2aff_SCLS <= 89.99 )
+				$lg7_SCLS = 'B';
+			else if ( $q2aff_SCLS >= 70.00 AND $q2aff_SCLS <= 79.99 )
+				$lg7_SCLS = 'C';
+			else if ( $q2aff_SCLS >= 0.00 AND $q2aff_SCLS <= 69.99 )
+				$lg7_SCLS = 'D';
+			else
+				$lg7_SCLS = 'ERR';
+			//AKHIR BUATAN BARU
 			
 			
+			
+			//ART
+			$qry_ART ="	SELECT 		t_prgrptps_sd.*
+						FROM 		t_prgrptps_sd
+						WHERE		t_prgrptps_sd.nis='$nis'		AND 
+									
+									t_prgrptps_sd.kdeplj='ART'"; // menghasilka per siswa per subjek (nilai akhir q1/q2/q3/q4)
+			$rsl_ART=mysql_query($qry_ART) or die('Query gagal');
+			$dat_ART=mysql_fetch_array($rsl_ART);
+			
+			$q1fgk_ART=$dat_ART['fgk'.'1'.'1'];//q1
+			$q2fgk_ART=$dat_ART['fgk'.'1'.'2'];//q2
+			
+			$q1fgs_ART=$dat_ART['fgs'.'1'.'1'];//q1
+			$q2fgs_ART=$dat_ART['fgs'.'1'.'2'];//q2
+			
+			//AWAL BUATAN BARU
+			if ( $q1fgk_ART < 60 )
+				$q1fgk_ART = 60;
+			else if ( $q1fgk_ART == 100 )
+				$q1fgk_ART = 99;
+			
+			if ( $q2fgk_ART < 60 )
+				$q2fgk_ART = 60;
+			else if ( $q2fgk_ART == 100 )
+				$q2fgk_ART = 99;
+			
+			if ( $q1fgs_ART < 60 )
+				$q1fgs_ART = 60;
+			else if ( $q1fgs_ART == 100 )
+				$q1fgs_ART = 99;
+			
+			if ( $q2fgs_ART < 60 )
+				$q2fgs_ART = 60;
+			else if ( $q2fgs_ART == 100 )
+				$q2fgs_ART = 99;
+			//AKHIR BUATAN BARU
+			
+			$kf_ART = number_format( ($q1fgk_ART+$q2fgk_ART)/2 ,0,',','.');
+			$sf_ART = number_format( ($q1fgs_ART+$q2fgs_ART)/2 ,0,',','.');
+			$av_ART = number_format( ($kf_ART+$sf_ART)/2 ,0,',','.');
+			$q2aff_ART=$dat_ART['aff'.$sms.$midtrm];//q2//.'1'.'2'
+			
+			//AWAL BUATAN BARU
+			if ( $q2aff_ART >= 90.00 AND $q2aff_ART <= 100.00 )
+				$lg7_ART = 'A';
+			else if ( $q2aff_ART >= 80.00 AND $q2aff_ART <= 89.99 )
+				$lg7_ART = 'B';
+			else if ( $q2aff_ART >= 70.00 AND $q2aff_ART <= 79.99 )
+				$lg7_ART = 'C';
+			else if ( $q2aff_ART >= 0.00 AND $q2aff_ART <= 69.99 )
+				$lg7_ART = 'D';
+			else
+				$lg7_ART = 'ERR';
+			//AKHIR BUATAN BARU
+			
+			
+			
+			//PE
+			$qry_PE ="	SELECT 		t_prgrptps_sd.*
+						FROM 		t_prgrptps_sd
+						WHERE		t_prgrptps_sd.nis='$nis'		AND 
+									
+									t_prgrptps_sd.kdeplj='PE'"; // menghasilka per siswa per subjek (nilai akhir q1/q2/q3/q4)
+			$rsl_PE=mysql_query($qry_PE) or die('Query gagal');
+			$dat_PE=mysql_fetch_array($rsl_PE);
+			
+			$q1fgk_PE=$dat_PE['fgk'.'1'.'1'];//q1
+			$q2fgk_PE=$dat_PE['fgk'.'1'.'2'];//q2
+			
+			$q1fgs_PE=$dat_PE['fgs'.'1'.'1'];//q1
+			$q2fgs_PE=$dat_PE['fgs'.'1'.'2'];//q2
+			
+			//AWAL BUATAN BARU
+			if ( $q1fgk_PE < 60 )
+				$q1fgk_PE = 60;
+			else if ( $q1fgk_PE == 100 )
+				$q1fgk_PE = 99;
+			
+			if ( $q2fgk_PE < 60 )
+				$q2fgk_PE = 60;
+			else if ( $q2fgk_PE == 100 )
+				$q2fgk_PE = 99;
+			
+			if ( $q1fgs_PE < 60 )
+				$q1fgs_PE = 60;
+			else if ( $q1fgs_PE == 100 )
+				$q1fgs_PE = 99;
+			
+			if ( $q2fgs_PE < 60 )
+				$q2fgs_PE = 60;
+			else if ( $q2fgs_PE == 100 )
+				$q2fgs_PE = 99;
+			//AKHIR BUATAN BARU
+			
+			$kf_PE = number_format( ($q1fgk_PE+$q2fgk_PE)/2 ,0,',','.');
+			$sf_PE = number_format( ($q1fgs_PE+$q2fgs_PE)/2 ,0,',','.');
+			$av_PE = number_format( ($kf_PE+$sf_PE)/2 ,0,',','.');
+			$q2aff_PE=$dat_PE['aff'.$sms.$midtrm];//q2//.'1'.'2'
+			
+			//AWAL BUATAN BARU
+			if ( $q2aff_PE >= 90.00 AND $q2aff_PE <= 100.00 )
+				$lg7_PE = 'A';
+			else if ( $q2aff_PE >= 80.00 AND $q2aff_PE <= 89.99 )
+				$lg7_PE = 'B';
+			else if ( $q2aff_PE >= 70.00 AND $q2aff_PE <= 79.99 )
+				$lg7_PE = 'C';
+			else if ( $q2aff_PE >= 0.00 AND $q2aff_PE <= 69.99 )
+				$lg7_PE = 'D';
+			else
+				$lg7_PE = 'ERR';
+			//AKHIR BUATAN BARU
+			
+			
+			
+			//ENG
+			$qry_ENG ="	SELECT 		t_prgrptps_sd.*
+						FROM 		t_prgrptps_sd
+						WHERE		t_prgrptps_sd.nis='$nis'		AND 
+									
+									t_prgrptps_sd.kdeplj='ENG'"; // menghasilka per siswa per subjek (nilai akhir q1/q2/q3/q4)
+			$rsl_ENG=mysql_query($qry_ENG) or die('Query gagal');
+			$dat_ENG=mysql_fetch_array($rsl_ENG);
+			
+			$q1fgk_ENG=$dat_ENG['fgk'.'1'.'1'];//q1
+			$q2fgk_ENG=$dat_ENG['fgk'.'1'.'2'];//q2
+			
+			$q1fgs_ENG=$dat_ENG['fgs'.'1'.'1'];//q1
+			$q2fgs_ENG=$dat_ENG['fgs'.'1'.'2'];//q2
+			
+			//AWAL BUATAN BARU
+			if ( $q1fgk_ENG < 60 )
+				$q1fgk_ENG = 60;
+			else if ( $q1fgk_ENG == 100 )
+				$q1fgk_ENG = 99;
+			
+			if ( $q2fgk_ENG < 60 )
+				$q2fgk_ENG = 60;
+			else if ( $q2fgk_ENG == 100 )
+				$q2fgk_ENG = 99;
+			
+			if ( $q1fgs_ENG < 60 )
+				$q1fgs_ENG = 60;
+			else if ( $q1fgs_ENG == 100 )
+				$q1fgs_ENG = 99;
+			
+			if ( $q2fgs_ENG < 60 )
+				$q2fgs_ENG = 60;
+			else if ( $q2fgs_ENG == 100 )
+				$q2fgs_ENG = 99;
+			//AKHIR BUATAN BARU
+			
+			$kf_ENG = number_format( ($q1fgk_ENG+$q2fgk_ENG)/2 ,0,',','.');
+			$sf_ENG = number_format( ($q1fgs_ENG+$q2fgs_ENG)/2 ,0,',','.');
+			$av_ENG = number_format( ($kf_ENG+$sf_ENG)/2 ,0,',','.');
+			$q2aff_ENG=$dat_ENG['aff'.$sms.$midtrm];//q2//.'1'.'2'
+			
+			//AWAL BUATAN BARU
+			if ( $q2aff_ENG >= 90.00 AND $q2aff_ENG <= 100.00 )
+				$lg7_ENG = 'A';
+			else if ( $q2aff_ENG >= 80.00 AND $q2aff_ENG <= 89.99 )
+				$lg7_ENG = 'B';
+			else if ( $q2aff_ENG >= 70.00 AND $q2aff_ENG <= 79.99 )
+				$lg7_ENG = 'C';
+			else if ( $q2aff_ENG >= 0.00 AND $q2aff_ENG <= 69.99 )
+				$lg7_ENG = 'D';
+			else
+				$lg7_ENG = 'ERR';
+			//AKHIR BUATAN BARU
+			
+			
+			
+			//MND
+			$qry_MND ="	SELECT 		t_prgrptps_sd.*
+						FROM 		t_prgrptps_sd
+						WHERE		t_prgrptps_sd.nis='$nis'		AND 
+									
+									t_prgrptps_sd.kdeplj='MND'"; // menghasilka per siswa per subjek (nilai akhir q1/q2/q3/q4)
+			$rsl_MND=mysql_query($qry_MND) or die('Query gagal');
+			$dat_MND=mysql_fetch_array($rsl_MND);
+			
+			$q1fgk_MND=$dat_MND['fgk'.'1'.'1'];//q1
+			$q2fgk_MND=$dat_MND['fgk'.'1'.'2'];//q2
+			
+			$q1fgs_MND=$dat_MND['fgs'.'1'.'1'];//q1
+			$q2fgs_MND=$dat_MND['fgs'.'1'.'2'];//q2
+			
+			//AWAL BUATAN BARU
+			if ( $q1fgk_MND < 60 )
+				$q1fgk_MND = 60;
+			else if ( $q1fgk_MND == 100 )
+				$q1fgk_MND = 99;
+			
+			if ( $q2fgk_MND < 60 )
+				$q2fgk_MND = 60;
+			else if ( $q2fgk_MND == 100 )
+				$q2fgk_MND = 99;
+			
+			if ( $q1fgs_MND < 60 )
+				$q1fgs_MND = 60;
+			else if ( $q1fgs_MND == 100 )
+				$q1fgs_MND = 99;
+			
+			if ( $q2fgs_MND < 60 )
+				$q2fgs_MND = 60;
+			else if ( $q2fgs_MND == 100 )
+				$q2fgs_MND = 99;
+			//AKHIR BUATAN BARU
+			
+			$kf_MND = number_format( ($q1fgk_MND+$q2fgk_MND)/2 ,0,',','.');
+			$sf_MND = number_format( ($q1fgs_MND+$q2fgs_MND)/2 ,0,',','.');
+			$av_MND = number_format( ($kf_MND+$sf_MND)/2 ,0,',','.');
+			$q2aff_MND=$dat_MND['aff'.$sms.$midtrm];//q2//.'1'.'2'
+			
+			//AWAL BUATAN BARU
+			if ( $q2aff_MND >= 90.00 AND $q2aff_MND <= 100.00 )
+				$lg7_MND = 'A';
+			else if ( $q2aff_MND >= 80.00 AND $q2aff_MND <= 89.99 )
+				$lg7_MND = 'B';
+			else if ( $q2aff_MND >= 70.00 AND $q2aff_MND <= 79.99 )
+				$lg7_MND = 'C';
+			else if ( $q2aff_MND >= 0.00 AND $q2aff_MND <= 69.99 )
+				$lg7_MND = 'D';
+			else
+				$lg7_MND = 'ERR';
+			//AKHIR BUATAN BARU
+			
+			
+			
+			//COM
+			$qry_COM ="	SELECT 		t_prgrptps_sd.*
+						FROM 		t_prgrptps_sd
+						WHERE		t_prgrptps_sd.nis='$nis'		AND 
+									
+									t_prgrptps_sd.kdeplj='COM'"; // menghasilka per siswa per subjek (nilai akhir q1/q2/q3/q4)
+			$rsl_COM=mysql_query($qry_COM) or die('Query gagal');
+			$dat_COM=mysql_fetch_array($rsl_COM);
+			
+			$q1fgk_COM=$dat_COM['fgk'.'1'.'1'];//q1
+			$q2fgk_COM=$dat_COM['fgk'.'1'.'2'];//q2
+			
+			$q1fgs_COM=$dat_COM['fgs'.'1'.'1'];//q1
+			$q2fgs_COM=$dat_COM['fgs'.'1'.'2'];//q2
+			
+			//AWAL BUATAN BARU
+			if ( $q1fgk_COM < 60 )
+				$q1fgk_COM = 60;
+			else if ( $q1fgk_COM == 100 )
+				$q1fgk_COM = 99;
+			
+			if ( $q2fgk_COM < 60 )
+				$q2fgk_COM = 60;
+			else if ( $q2fgk_COM == 100 )
+				$q2fgk_COM = 99;
+			
+			if ( $q1fgs_COM < 60 )
+				$q1fgs_COM = 60;
+			else if ( $q1fgs_COM == 100 )
+				$q1fgs_COM = 99;
+			
+			if ( $q2fgs_COM < 60 )
+				$q2fgs_COM = 60;
+			else if ( $q2fgs_COM == 100 )
+				$q2fgs_COM = 99;
+			//AKHIR BUATAN BARU
+			
+			$kf_COM = number_format( ($q1fgk_COM+$q2fgk_COM)/2 ,0,',','.');
+			$sf_COM = number_format( ($q1fgs_COM+$q2fgs_COM)/2 ,0,',','.');
+			$av_COM = number_format( ($kf_COM+$sf_COM)/2 ,0,',','.');
+			$q2aff_COM=$dat_COM['aff'.$sms.$midtrm];//q2//.'1'.'2'
+			
+			//AWAL BUATAN BARU
+			if ( $q2aff_COM >= 90.00 AND $q2aff_COM <= 100.00 )
+				$lg7_COM = 'A';
+			else if ( $q2aff_COM >= 80.00 AND $q2aff_COM <= 89.99 )
+				$lg7_COM = 'B';
+			else if ( $q2aff_COM >= 70.00 AND $q2aff_COM <= 79.99 )
+				$lg7_COM = 'C';
+			else if ( $q2aff_COM >= 0.00 AND $q2aff_COM <= 69.99 )
+				$lg7_COM = 'D';
+			else
+				$lg7_COM = 'ERR';
+			//AKHIR BUATAN BARU
+			
+			
+			
+			//AWAL BUATAN BARU
+			$str_vis_d = '';
 			
 			if( ($kdekls=='P-1A' AND $kdeplj=='COM') OR ($kdekls=='P-1B' AND $kdeplj=='COM') OR ($kdekls=='P-1C' AND $kdeplj=='COM') OR ($kdekls=='P-1D' AND $kdeplj=='COM') )
 			{
-				/*$pdf->SetFillColor(204,204,204);*/
-				$lg7='';
+				$str_vis_d = 'hidden';
 			}
 			else
 			{
-				/*$pdf->SetFillColor(255, 255, 255);*/
+				$str_vis_d = 'visible';
 			}
+			//AKHIR BUATAN BARU
 			
 			
 			
 			//AWAL BUATAN BARU
 			echo"
+				<tr>
+					<td align='right'>1</td>
+					<td>Religion and Character Education</td>
+					<td align='center' width='6.5%'>
+						$q1fgk_RLG
+					</td>
+					<td align='center' width='6.5%'>
+						$q2fgk_RLG
+					</td>
+					<td align='center' width='6.5%' bgcolor='lightgrey'>
+						$kf_RLG
+					</td>
+					<td align='center' width='6.5%'>
+						$q1fgs_RLG
+					</td>
+					<td align='center' width='6.5%'>
+						$q2fgs_RLG
+					</td>
+					<td align='center' width='6.5%' bgcolor='lightgrey'>
+						$sf_RLG
+					</td>
+					<td align='center' width='6.5%' bgcolor='yellow'>
+						$av_RLG
+					</td>
 					<td align='center'>
-						$lg7
+						$lg7_RLG
+					</td>
+				</tr>
+				
+				
+				
+				<tr>
+					<td align='right'>2</td>
+					<td>Pancasila and Civic Education</td>
+					<td align='center' width='6.5%'>
+						$q1fgk_CME
+					</td>
+					<td align='center' width='6.5%'>
+						$q2fgk_CME
+					</td>
+					<td align='center' width='6.5%' bgcolor='lightgrey'>
+						$kf_CME
+					</td>
+					<td align='center' width='6.5%'>
+						$q1fgs_CME
+					</td>
+					<td align='center' width='6.5%'>
+						$q2fgs_CME
+					</td>
+					<td align='center' width='6.5%' bgcolor='lightgrey'>
+						$sf_CME
+					</td>
+					<td align='center' width='6.5%' bgcolor='yellow'>
+						$av_CME
+					</td>
+					<td align='center'>
+						$lg7_CME
+					</td>
+				</tr>
+				
+				
+				
+				<tr>
+					<td align='right'>3</td>
+					<td>Bahasa Indonesia</td>
+					<td align='center' width='6.5%'>
+						$q1fgk_BIN
+					</td>
+					<td align='center' width='6.5%'>
+						$q2fgk_BIN
+					</td>
+					<td align='center' width='6.5%' bgcolor='lightgrey'>
+						$kf_BIN
+					</td>
+					<td align='center' width='6.5%'>
+						$q1fgs_BIN
+					</td>
+					<td align='center' width='6.5%'>
+						$q2fgs_BIN
+					</td>
+					<td align='center' width='6.5%' bgcolor='lightgrey'>
+						$sf_BIN
+					</td>
+					<td align='center' width='6.5%' bgcolor='yellow'>
+						$av_BIN
+					</td>
+					<td align='center'>
+						$lg7_BIN
+					</td>
+				</tr>
+				
+				
+				
+				<tr>
+					<td align='right'>4</td>
+					<td>Mathematics</td>
+					<td align='center' width='6.5%'>
+						$q1fgk_MTH
+					</td>
+					<td align='center' width='6.5%'>
+						$q2fgk_MTH
+					</td>
+					<td align='center' width='6.5%' bgcolor='lightgrey'>
+						$kf_MTH
+					</td>
+					<td align='center' width='6.5%'>
+						$q1fgs_MTH
+					</td>
+					<td align='center' width='6.5%'>
+						$q2fgs_MTH
+					</td>
+					<td align='center' width='6.5%' bgcolor='lightgrey'>
+						$sf_MTH
+					</td>
+					<td align='center' width='6.5%' bgcolor='yellow'>
+						$av_MTH
+					</td>
+					<td align='center'>
+						$lg7_MTH
+					</td>
+				</tr>
+				
+				
+				
+				<tr>
+					<td align='right'>5</td>
+					<td>General Science</td>
+					<td align='center' width='6.5%'>
+						$q1fgk_SCN
+					</td>
+					<td align='center' width='6.5%'>
+						$q2fgk_SCN
+					</td>
+					<td align='center' width='6.5%' bgcolor='lightgrey'>
+						$kf_SCN
+					</td>
+					<td align='center' width='6.5%'>
+						$q1fgs_SCN
+					</td>
+					<td align='center' width='6.5%'>
+						$q2fgs_SCN
+					</td>
+					<td align='center' width='6.5%' bgcolor='lightgrey'>
+						$sf_SCN
+					</td>
+					<td align='center' width='6.5%' bgcolor='yellow'>
+						$av_SCN
+					</td>
+					<td align='center'>
+						$lg7_SCN
+					</td>
+				</tr>
+				
+				
+				
+				<tr>
+					<td align='right'>6</td>
+					<td>Social Studies</td>
+					<td align='center' width='6.5%'>
+						$q1fgk_SCLS
+					</td>
+					<td align='center' width='6.5%'>
+						$q2fgk_SCLS
+					</td>
+					<td align='center' width='6.5%' bgcolor='lightgrey'>
+						$kf_SCLS
+					</td>
+					<td align='center' width='6.5%'>
+						$q1fgs_SCLS
+					</td>
+					<td align='center' width='6.5%'>
+						$q2fgs_SCLS
+					</td>
+					<td align='center' width='6.5%' bgcolor='lightgrey'>
+						$sf_SCLS
+					</td>
+					<td align='center' width='6.5%' bgcolor='yellow'>
+						$av_SCLS
+					</td>
+					<td align='center'>
+						$lg7_SCLS
+					</td>
+				</tr>
+				
+				
+				
+				<tr>
+					<td align='right'>7</td>
+					<td>Cultural Art and Music</td>
+					<td align='center' width='6.5%'>
+						$q1fgk_ART
+					</td>
+					<td align='center' width='6.5%'>
+						$q2fgk_ART
+					</td>
+					<td align='center' width='6.5%' bgcolor='lightgrey'>
+						$kf_ART
+					</td>
+					<td align='center' width='6.5%'>
+						$q1fgs_ART
+					</td>
+					<td align='center' width='6.5%'>
+						$q2fgs_ART
+					</td>
+					<td align='center' width='6.5%' bgcolor='lightgrey'>
+						$sf_ART
+					</td>
+					<td align='center' width='6.5%' bgcolor='yellow'>
+						$av_ART
+					</td>
+					<td align='center'>
+						$lg7_ART
+					</td>
+				</tr>
+				
+				
+				
+				<tr>
+					<td align='right'>8</td>
+					<td>Physical Education & Health</td>
+					<td align='center' width='6.5%'>
+						$q1fgk_PE
+					</td>
+					<td align='center' width='6.5%'>
+						$q2fgk_PE
+					</td>
+					<td align='center' width='6.5%' bgcolor='lightgrey'>
+						$kf_PE
+					</td>
+					<td align='center' width='6.5%'>
+						$q1fgs_PE
+					</td>
+					<td align='center' width='6.5%'>
+						$q2fgs_PE
+					</td>
+					<td align='center' width='6.5%' bgcolor='lightgrey'>
+						$sf_PE
+					</td>
+					<td align='center' width='6.5%' bgcolor='yellow'>
+						$av_PE
+					</td>
+					<td align='center'>
+						$lg7_PE
+					</td>
+				</tr>
+				
+				
+				
+				<tr>
+					<td align='right'>9</td>
+					<td>English</td>
+					<td align='center' width='6.5%'>
+						$q1fgk_ENG
+					</td>
+					<td align='center' width='6.5%'>
+						$q2fgk_ENG
+					</td>
+					<td align='center' width='6.5%' bgcolor='lightgrey'>
+						$kf_ENG
+					</td>
+					<td align='center' width='6.5%'>
+						$q1fgs_ENG
+					</td>
+					<td align='center' width='6.5%'>
+						$q2fgs_ENG
+					</td>
+					<td align='center' width='6.5%' bgcolor='lightgrey'>
+						$sf_ENG
+					</td>
+					<td align='center' width='6.5%' bgcolor='yellow'>
+						$av_ENG
+					</td>
+					<td align='center'>
+						$lg7_ENG
+					</td>
+				</tr>
+				
+				
+				
+				<tr>
+					<td align='right'>10</td>
+					<td>Mandarin</td>
+					<td align='center' width='6.5%'>
+						$q1fgk_MND
+					</td>
+					<td align='center' width='6.5%'>
+						$q2fgk_MND
+					</td>
+					<td align='center' width='6.5%' bgcolor='lightgrey'>
+						$kf_MND
+					</td>
+					<td align='center' width='6.5%'>
+						$q1fgs_MND
+					</td>
+					<td align='center' width='6.5%'>
+						$q2fgs_MND
+					</td>
+					<td align='center' width='6.5%' bgcolor='lightgrey'>
+						$sf_MND
+					</td>
+					<td align='center' width='6.5%' bgcolor='yellow'>
+						$av_MND
+					</td>
+					<td align='center'>
+						$lg7_MND
+					</td>
+				</tr>
+				
+				
+				
+				<tr style='visibility: $str_vis_d'>
+					<td align='right'>11</td>
+					<td>Computer Education</td>
+					<td align='center' width='6.5%'>
+						$q1fgk_COM
+					</td>
+					<td align='center' width='6.5%'>
+						$q2fgk_COM
+					</td>
+					<td align='center' width='6.5%' bgcolor='lightgrey'>
+						$kf_COM
+					</td>
+					<td align='center' width='6.5%'>
+						$q1fgs_COM
+					</td>
+					<td align='center' width='6.5%'>
+						$q2fgs_COM
+					</td>
+					<td align='center' width='6.5%' bgcolor='lightgrey'>
+						$sf_COM
+					</td>
+					<td align='center' width='6.5%' bgcolor='yellow'>
+						$av_COM
+					</td>
+					<td align='center'>
+						$lg7_COM
 					</td>
 				</tr>
 			";
-			//AKHIR BUATAN BARU
-			
-			
-			
-			/*$pdf->Cell( 1.5	,0.6,$lg7,'LRTB',0,C,true);
-			
-			
-			
-			$pdf->SetTextColor(0,0,0);
-			
-			$pdf->Ln();*/
-		}	
-		
-		
-		
-		$j++;
-		$id++;
-		//$id=$cell[$j][0];
-	}
+			//AKHIR BAUTAN BARU
 	
 	
 	
@@ -1189,6 +1679,28 @@ while($y<$x)
 	
 	
 	echo"			
+						<tr>
+							<td align='center'>
+								<br/>
+							</td>
+							<td>
+								
+							</td>
+							<td align='justify'>
+								
+							</td>
+						</tr>
+						<tr>
+							<td align='center'>
+								<br/>
+							</td>
+							<td>
+								
+							</td>
+							<td align='justify'>
+								
+							</td>
+						</tr>
 				</table>
 				
 				<br/>

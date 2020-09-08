@@ -373,6 +373,22 @@ while($y<$x)
 	$alamatsiswa		=$cell5[$y][9];
 	$tlpsiswa			=$cell5[$y][10];
 	$dftkls				=$cell5[$y][11];
+	
+	if ( $dftkls == '01' )
+		$dftkls = 'I';
+	else if ( $dftkls == '02' )
+		$dftkls = 'II';
+	else if ( $dftkls == '03' )
+		$dftkls = 'III';
+	else if ( $dftkls == '04' )
+		$dftkls = 'IV';
+	else if ( $dftkls == '05' )
+		$dftkls = 'V';
+	else if ( $dftkls == '06' )
+		$dftkls = 'VI';
+	else //if ( $dftkls == '07' )
+		$dftkls = 'Err';
+	
 	$pdatgl				=$cell5[$y][12];
 	$sklasl				=$cell5[$y][13];
 	$sklasl_almt		=$cell5[$y][14];

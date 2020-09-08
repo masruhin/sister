@@ -151,13 +151,14 @@ $queryx 	="	SELECT 		t_mstpng.*
 				WHERE 		(t_mstpng.kdekls='". mysql_escape_string($kdekls)."' OR '$kdekls'='' ) AND
 							t_mstpng.kdeplj='". mysql_escape_string($kdeplj)."' AND
 							
-							(t_mstpng.kdegru != '100000' AND t_mstpng.kdegru != '200000')
+							(t_mstpng.kdegru != '100000' AND t_mstpng.kdegru != '200000' AND t_mstpng.kdegru != '212070038' AND t_mstpng.kdegru != '208070009' AND t_mstpng.kdegru != '210070019' AND t_mstpng.kdegru != '214080057' )
 							
 				ORDER BY	t_mstpng.kdekls
 				
 							";
 $resultx =mysql_query($queryx) or die('Query gagal2');
-while($datax 	=mysql_fetch_array($resultx))
+//while ($datax 	=mysql_fetch_array($resultx))
+if ($datax 	=mysql_fetch_array($resultx))
 {
 	$kdekls=$datax[kdekls];
 
@@ -166,7 +167,7 @@ while($datax 	=mysql_fetch_array($resultx))
 				WHERE 		t_mstpng.kdekls='". mysql_escape_string($kdekls)."' AND
 							t_mstpng.kdeplj='". mysql_escape_string($kdeplj)."' AND
 							
-							(t_mstpng.kdegru != '100000' AND t_mstpng.kdegru != '200000')
+							(t_mstpng.kdegru != '100000' AND t_mstpng.kdegru != '200000' AND t_mstpng.kdegru != '212070038' AND t_mstpng.kdegru != '208070009' AND t_mstpng.kdegru != '210070019' AND t_mstpng.kdegru != '214080057' )
 							
 							";
 	$result =mysql_query($query) or die('Query gagal2');
@@ -293,6 +294,30 @@ while($datax 	=mysql_fetch_array($resultx))
 			$bgprj=$prj;
 		if($tes>$bgtes)
 			$bgtes=$tes;
+		
+		
+		
+		//AWAL BUATAN BARU
+		$d_ka1 = $data2['ka1_'."$sms"."$midtrm"];
+		$d_ka2 = $data2['ka2_'."$sms"."$midtrm"];
+		$d_ka3 = $data2['ka3_'."$sms"."$midtrm"];
+		$d_ka4 = $data2['ka4_'."$sms"."$midtrm"];
+		$d_ka5 = $data2['ka5_'."$sms"."$midtrm"];
+		$d_ka6 = $data2['ka6_'."$sms"."$midtrm"];
+		$d_ka7 = $data2['ka7_'."$sms"."$midtrm"];
+		$d_ka8 = $data2['ka8_'."$sms"."$midtrm"];
+		
+		$d_sa1 = $data2['sa1_'."$sms"."$midtrm"];
+		$d_sa2 = $data2['sa2_'."$sms"."$midtrm"];
+		$d_sa3 = $data2['sa3_'."$sms"."$midtrm"];
+		$d_sa4 = $data2['sa4_'."$sms"."$midtrm"];
+		$d_sa5 = $data2['sa5_'."$sms"."$midtrm"];
+		$d_sa6 = $data2['sa6_'."$sms"."$midtrm"];
+		$d_sa7 = $data2['sa7_'."$sms"."$midtrm"];
+		$d_sa8 = $data2['sa8_'."$sms"."$midtrm"];
+		//AKHIR BUATAN BARU
+		
+		
 	
 		$i++;
 	}
@@ -300,8 +325,12 @@ while($datax 	=mysql_fetch_array($resultx))
 	$hlm=1;
 	$no=1;
 	$j=0;
-	while($j<$i)
-	{
+	
+	
+	
+	//AWAL WHILE
+	/*while($j<$i)
+	{*/
 		//AWAL BUATAN BARU
 		echo"
 			<table width='100%'>
@@ -341,8 +370,8 @@ while($datax 	=mysql_fetch_array($resultx))
 					</th>
 				</tr>
 				<tr bgcolor='lightgrey'>
-					<th align='center' bgcolor='yellow'><!--1--></th><th align='center' bgcolor='yellow'><!--2--></th><th align='center' bgcolor='yellow'><!--3--></th><th align='center' bgcolor='yellow'><!--4--></th><th align='center' bgcolor='yellow'><!--5--></th><th align='center' bgcolor='yellow'><!--6--></th><th align='center' bgcolor='yellow'><!--7--></th><th align='center' bgcolor='yellow'><!--8--></th><th align='center'><!--Ave.--></th><th align='center' colspan='2' bgcolor='lightblue'>Mid Test / Final Test<!--ST--></th><th align='center' bgcolor='pink'><!--FG--></th><th align='center' bgcolor='pink'><!--LG--></th><th align='center' bgcolor='pink'><!--NG--></th>
-					<th align='center' bgcolor='yellow'><!--1--></th><th align='center' bgcolor='yellow'><!--2--></th><th align='center' bgcolor='yellow'><!--3--></th><th align='center' bgcolor='yellow'><!--4--></th><th align='center' bgcolor='yellow'><!--5--></th><th align='center' bgcolor='yellow'><!--6--></th><th align='center' bgcolor='yellow'><!--7--></th><th align='center' bgcolor='yellow'><!--8--></th><th align='center'><!--Ave.--></th><th align='center' colspan='2' bgcolor='lightblue'>Mid Test / Final Test<!--ST--></th><th align='center' bgcolor='pink'><!--FG--></th><th align='center' bgcolor='pink'><!--LG--></th><th align='center' bgcolor='pink'><!--NG--></th>
+					<th align='center' bgcolor='yellow'>$d_ka1<!--1--></th><th align='center' bgcolor='yellow'>$d_ka2<!--2--></th><th align='center' bgcolor='yellow'>$d_ka3<!--3--></th><th align='center' bgcolor='yellow'>$d_ka4<!--4--></th><th align='center' bgcolor='yellow'>$d_ka5<!--5--></th><th align='center' bgcolor='yellow'>$d_ka6<!--6--></th><th align='center' bgcolor='yellow'>$d_ka7<!--7--></th><th align='center' bgcolor='yellow'>$d_ka8<!--8--></th><th align='center'><!--Ave.--></th><th align='center' colspan='2' bgcolor='lightblue'>Mid Test / Final Test<!--ST--></th><th align='center' bgcolor='pink'><!--FG--></th><th align='center' bgcolor='pink'><!--LG--></th><th align='center' bgcolor='pink'><!--NG--></th>
+					<th align='center' bgcolor='yellow'>$d_sa1<!--1--></th><th align='center' bgcolor='yellow'>$d_sa2<!--2--></th><th align='center' bgcolor='yellow'>$d_sa3<!--3--></th><th align='center' bgcolor='yellow'>$d_sa4<!--4--></th><th align='center' bgcolor='yellow'>$d_sa5<!--5--></th><th align='center' bgcolor='yellow'>$d_sa6<!--6--></th><th align='center' bgcolor='yellow'>$d_sa7<!--7--></th><th align='center' bgcolor='yellow'>$d_sa8<!--8--></th><th align='center'><!--Ave.--></th><th align='center' colspan='2' bgcolor='lightblue'>Mid Test / Final Test<!--ST--></th><th align='center' bgcolor='pink'><!--FG--></th><th align='center' bgcolor='pink'><!--LG--></th><th align='center' bgcolor='pink'><!--NG--></th>
 					<th align='center' bgcolor='lightgreen'><!--Ave.--></th><th align='center' bgcolor='lightgreen'><!--LG--></th><th align='center' bgcolor='lightgreen'><!--NG--></th>
 					<th align='center' bgcolor='yellow'>Respect<!--1--></th><th align='center' bgcolor='yellow'>Responsibility<!--2--></th><th align='center' bgcolor='yellow'>Resilience<!--3--></th><th align='center' bgcolor='yellow'>Integrity<!--4--></th><th align='center' bgcolor='yellow'>Generosity<!--5--></th><th align='center' bgcolor='yellow'>Harmony<!--6--></th><th align='center' bgcolor='yellow'>Truth<!--7--></th><th align='center' bgcolor='lightgreen'><!--Ave.--></th><th align='center' bgcolor='lightgreen'><!--LG--></th><th align='center' bgcolor='lightgreen'><!--NG--></th>
 				</tr>
@@ -1083,7 +1112,8 @@ while($datax 	=mysql_fetch_array($resultx))
 		
 		
 		
-	}
+	/*}*/
+	//AKHIR WHILE
 	
 	
 	

@@ -333,7 +333,7 @@ echo"
 								//
 								echo"<li><a href='guru.php?mode=R1D01G&pilihan=tambah_general'>Lesson Plan</a></li>";
 								
-								echo"<li><hr/></li>";
+								//echo"<li><hr/></li>";
 								
 								//Assessment
 								echo"<li><a href='guru.php?mode=R1D01E&pilihan=tambah_general'>Assessment</a></li>";
@@ -349,6 +349,41 @@ echo"
 						
 						echo"
 						<li>";
+						
+							if($kdekry=='100000')
+							{
+								echo"<span class='dir'>Report</span>";
+								echo"<ul>";
+								echo"<li><a href='guru.php?mode=R1D04HPGTK1'>Input Comment (1. Personal, Social, and Emotional Development)</a></li>";
+								echo"<li><a href='guru.php?mode=R1D04HPGTK2'>Input Comment (2. Communication, Language and Literacy)</a></li>";
+								echo"<li><a href='guru.php?mode=R1D04HPGTK3'>Input Comment (3. Mathematical/Cognitive Development)</a></li>";
+								echo"<li><a href='guru.php?mode=R1D04HPGTK4'>Input Comment (4. Creative Development)</a></li>";
+								echo"<li><a href='guru.php?mode=R1D04HPGTK5'>Input Comment (5. Physical Development (Gross and Fine Motor Skills))</a></li>";
+								
+								echo"<li><a href='guru.php?mode=R1D04XTK_Cari'>Input Learning Record (Pre-K - KG)</a></li>";
+								
+								echo"<li><a href='guru.php?mode=R1D04LPG'>Print Learning Record (Pre-K)</a></li>";// - Pre-K
+								echo"<li><a href='guru.php?mode=R1D04LTK'>Print Learning Record (K1)</a></li>";// - K1
+								echo"<li><a href='guru.php?mode=R1D04LTK2'>Print Learning Record (K2)</a></li>";// - K2
+								
+								
+								
+								echo"<hr/>";
+								
+								echo"<li><a href='guru.php?mode=R1D04H'>Input Absences (PS)</a></li>";//Input Absences & Comment
+								
+								echo"<li><a href='guru.php?mode=R1D04X_Cari'>Input Grading Sheet (PS)</a></li>";
+								echo"<li><a href='guru.php?mode=R1D04R'>Print Grading Sheet (PS)</a></li>";
+								
+								echo"<li><a href='guru.php?mode=R1D04LSD'>Print Mid Semester Ledger (PS)</a></li>";
+								echo"<li><a href='guru.php?mode=R1D04LSDfnl'>Print Final Semester Ledger (PS)</a></li>";
+								echo"<li><a href='guru.php?mode=R1D04OSD'>Print Mid Semester Report (PS)</a></li>";
+								echo"<li><a href='guru.php?mode=R1D04PSD'>Print Final Semester Report (PS)</a></li>"; 
+								
+								
+								
+								echo"</ul>";
+							}
 							
 							//TK
 							if($kdetkt=='PG' OR $kdetkt=='KG')	
@@ -362,10 +397,11 @@ echo"
 								echo"<li><a href='guru.php?mode=R1D04HPGTK5'>Input Comment (5. Physical Development (Gross and Fine Motor Skills))</a></li>";
 								
 								echo"<li><a href='guru.php?mode=R1D04XTK_Cari'>Input Learning Record (Pre-K - KG)</a></li>";
+								
 								echo"<li><a href='guru.php?mode=R1D04LPG'>Print Learning Record (Pre-K)</a></li>";// - Pre-K
 								echo"<li><a href='guru.php?mode=R1D04LTK'>Print Learning Record (K1)</a></li>";// - K1
 								echo"<li><a href='guru.php?mode=R1D04LTK2'>Print Learning Record (K2)</a></li>";// - K2
-								echo"<li><a href='guru.php?mode=R1D04LTK22'>Print Learning Record PG)</a></li>";
+								
 								echo"</ul>";
 							}
 							
@@ -376,12 +412,12 @@ echo"
 								echo"<ul>";
 								
 								
-								echo"<li><a href='guru.php?mode=R1D04SD'>Input Learning Record (PS) LO</a></li>";
+								/*echo"<li><a href='guru.php?mode=R1D04SD'>Input Learning Record (PS) LO</a></li>";
 								echo"<li><a href='guru.php?mode=R1D04XSD_Cari'>Input Learning Record (PS) LO Score</a></li>";
-								echo"<li><a href='guru.php?mode=R1D04SDlrcd'>Print Learning Record (PS)</a></li>";
+								echo"<li><a href='guru.php?mode=R1D04SDlrcd'>Print Learning Record (PS)</a></li>";*/
 								//echo"<li>	SD	</li>";
-								echo"<li><hr/></li>";
-								echo"<li><a href='guru.php?mode=R1D04G_Cari'>Input Extra Curricular (PS)</a></li>";
+								//echo"<li><hr/></li>";
+								//echo"<li><a href='guru.php?mode=R1D04G_Cari'>Input Extra Curricular (PS)</a></li>";
 								echo"<li><a href='guru.php?mode=R1D04H'>Input Absences (PS)</a></li>";//Input Absences & Comment
 								
 								echo"<li><a href='guru.php?mode=R1D04X_Cari'>Input Grading Sheet (PS)</a></li>";
@@ -713,6 +749,8 @@ echo"
 							echo"<li><a href='guru.php?mode=R1D11B'>Cetak Rapor Diknas Cover 2 (SD)</a></li>";
 							echo"<li><a href='guru.php?mode=R1D11C'>Cetak Rapor Diknas Cover 3 (SD)</a></li>";
 							
+							//echo"<li><a href='guru.php?mode=R1D11D'>Cetak Rapor Diknas Akademik Pengetahuan (SD)</a></li>";
+							
 							echo"</ul>";
 							
 							echo"</li>";
@@ -863,7 +901,6 @@ echo"
 					require("pendataan/R1D04LPG.php"); // print learning record pRE-K
 					require("pendataan/R1D04LTK.php"); // print learning record tk k1
 					require("pendataan/R1D04LTK2.php"); // print learning record tk k2
-					require("pendataan/R1D04LTK22.php"); // print learning record tk k2
 					require("pendataan/R1D04LPGab.php"); // cetak laporan perkembangan anak pg
 					require("pendataan/R1D04LTKaA.php"); // cetak laporan perkembangan anak tka
 					require("pendataan/R1D04LTKbB.php"); // cetak laporan perkembangan anak tkb
@@ -892,6 +929,7 @@ echo"
 					require("pendataan/R1D11A.php");
 					require("pendataan/R1D11B.php");
 					require("pendataan/R1D11C.php");
+					require("pendataan/R1D11D.php");
 					//AKHIR BUATAN BARU
 
 
@@ -1005,7 +1043,6 @@ echo"
 					$R1D04LPGclass 	=new R1D04LPGclass; // print LEARNING record pre-k
 					$R1D04LTKclass 	=new R1D04LTKclass; // print LEARNING record tk k1
 					$R1D04LTK2class =new R1D04LTK2class; // print LEARNING record tk k2
-					$R1D04LTK22class =new R1D04LTK22class; // print LEARNING record tk k2
 					$R1D04LPGabclass =new R1D04LPGabclass; // cetak laporan perkembangan anak pg
 					$R1D04LTKaAclass =new R1D04LTKaAclass; // cetak laporan perkembangan anak tka
 					$R1D04LTKbBclass =new R1D04LTKbBclass; // cetak laporan perkembangan anak tkb
@@ -1034,6 +1071,7 @@ echo"
 					$R1D11Aclass 	=new R1D11Aclass;
 					$R1D11Bclass 	=new R1D11Bclass;
 					$R1D11Cclass 	=new R1D11Cclass;
+					$R1D11Dclass 	=new R1D11Dclass;
 					//AKHIR BUATAN BARU
 					
 					
@@ -1712,10 +1750,6 @@ echo"
    						case "R1D04LTK2";
 							$R1D04LTK2class->R1D04LTK2();
    							break;
-
-   						case "R1D04LTK22";
-							$R1D04LTK22class->R1D04LTK22();
-   							break;
 						// -------------------------------------------------- learning record pg  --------------------------------------------------
    						case "R1D04LPGab";
 							$R1D04LPGabclass->R1D04LPGab();
@@ -1908,6 +1942,10 @@ echo"
 						case "R1D11C";
 							$R1D11Cclass->R1D11C();
    							break;
+						
+						case "R1D11D";
+							$R1D11Dclass->R1D11D();
+   							break;
 						//AKHIR BUATAN BARU
 						
 						
@@ -1972,9 +2010,9 @@ echo"
 				</TR>
 			</TABLE>";
 			echo"
-				<center>
+				<!--<center>
 					<img src='../images/fotobersama.jpg' height='80%' width='100%'/>
-				</center>
+				</center>-->
 			<div id='judulbawah'>
 			<TABLE WIDTH='100%'>	
 				<TR><TD WIDTH ='50%' HEIGHT='10' BGCOLOR='#ffffff'><FONT class='adminhead'>Copyright &copy 2020 - SAINT JOHN'S SCHOOL</FONT></TD>
@@ -1987,3 +2025,4 @@ echo"
 				
 	</BODY>
 </HTML>";
+?>

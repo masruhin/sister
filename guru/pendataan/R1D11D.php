@@ -1,6 +1,6 @@
 <?php
 //----------------------------------------------------------------------------------------------------
-//Program		: R1D04PSD.php
+//Program		: R1D11D.php
 //Di Edit oleh	: ITPCS
 //Tanggal Edit	: 21/12/2011
 //Keterangan	: Fungsi-fungsi SISWA rapot SD 
@@ -10,10 +10,10 @@ if(!defined("sister"))
 	die("<h1>Permission Denied</h1>You don't have permission to access the this page.");
 }
 // -------------------------------------------------- Class --------------------------------------------------
-class R1D04PSDclass
+class R1D11Dclass
 {
     // -------------------------------------------------- Cetak Daftar --------------------------------------------------
- 	function R1D04PSD()
+ 	function R1D11D()
  	{
 		echo"<SCRIPT TYPE='text/javascript' src='../js/fungsi_input.js'></SCRIPT>";	
 		echo"<script TYPE='text/javascript' src='../js/DatePicker/WdatePicker.js'></script>";
@@ -23,10 +23,10 @@ class R1D04PSDclass
 		$midtrm='1';
 
 	 	echo"
-		<!--<FORM ACTION='pendataan/R1D04PSD_C01.php' target=_blank METHOD='post' NAME='f1' ENCTYPE='multipart/form-data'>-->
-		<FORM ACTION='pendataan/R1D04PSD_C01_HTML.php' target=_blank METHOD='post' NAME='f1' ENCTYPE='multipart/form-data'>
+		<!--<FORM ACTION='pendataan/R1D11D_C01.php' target=_blank METHOD='post' NAME='f1' ENCTYPE='multipart/form-data'>-->
+		<FORM ACTION='pendataan/R1D11D_C01_HTML.php' target=_blank METHOD='post' NAME='f1' ENCTYPE='multipart/form-data'>
   			<TABLE BORDER='0' CELLPADDING='0' CELLSPACING='5' WIDTH='100%'>
-        		<TR><TD COLSPAN='2'><B>PRINT FINAL SEMESTER REPORT (PS)</B></TD></TR>
+        		<TR><TD COLSPAN='2'><B>CETAK RAPOR DIKNAS (SD) AKADEMIK PENGETAHUAN</B></TD></TR>
            		<TR></TR><TR></TR>
 				<TR><TD WIDTH='15%'>Class</TD>
 					<TD WIDTH='85%'>:
@@ -129,7 +129,7 @@ class R1D04PSDclass
 				</TR>*/
 				
 				echo"
-                <TR><TD>Print Date</TD>
+                <!--<TR><TD>Print Date</TD>
               		<TD>:
 						<INPUT 	NAME		='tglctk'
 								TYPE		='text'
@@ -140,7 +140,7 @@ class R1D04PSDclass
 								ONKEYPRESS	='return enter(this,event)'>
 						<IMG onClick='WdatePicker({el:tglctk});' src='../js/DatePicker/skin/datePicker.gif' WIDTH='16' HEIGHT='16' align='absmiddle'>
 					</TD>
-				</TR>
+				</TR>-->
 				<!--$tglctk-->
 				<!--<tr>
 					<td>Tahun Pelajaran</td><td> : 
@@ -150,7 +150,7 @@ class R1D04PSDclass
 					</td>
 				</tr>-->				
     	   	</TABLE>
-			<INPUT TYPE='submit' VALUE='Print' />
+			<INPUT TYPE='submit' VALUE='Cetak' />
 		</FORM>";
  	}
 }//akhir class
