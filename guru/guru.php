@@ -348,15 +348,10 @@ if (!isset($_SESSION['Admin'])) {
 			echo "<li><a href='guru.php?mode=R1D04HPGTK3'>Input Comment (3. Mathematical/Cognitive Development)</a></li>";
 			echo "<li><a href='guru.php?mode=R1D04HPGTK4'>Input Comment (4. Creative Development)</a></li>";
 			echo "<li><a href='guru.php?mode=R1D04HPGTK5'>Input Comment (5. Physical Development (Gross and Fine Motor Skills))</a></li>";
-
 			echo "<li><a href='guru.php?mode=R1D04XTK_Cari'>Input Learning Record (Pre-K - KG)</a></li>";
-
-			echo "<li><a href='guru.php?mode=R1D04LTK22'>Print Learning Record (PG1)</a></li>";
 			//echo"<li><a href='guru.php?mode=R1D04LPG'>Print Learning Record (Pre-K)</a></li>";// - Pre-K
 			echo "<li><a href='guru.php?mode=R1D04LTK'>Print Learning Record (K1)</a></li>"; // - K1
 			echo "<li><a href='guru.php?mode=R1D04LTK2'>Print Learning Record (K2)</a></li>"; // - K2
-
-
 
 			echo "<hr/>";
 
@@ -386,7 +381,7 @@ if (!isset($_SESSION['Admin'])) {
 			echo "<li><a href='guru.php?mode=R1D04HPGTK5'>Input Comment (5. Physical Development (Gross and Fine Motor Skills))</a></li>";
 
 			echo "<li><a href='guru.php?mode=R1D04XTK_Cari'>Input Learning Record (Pre-K - KG)</a></li>";
-
+			echo "<li><a href='guru.php?mode=R1D04LTK21'>Input Student Progress Report (PG1)</a></li>";
 			echo "<li><a href='guru.php?mode=R1D04LTK22'>Print Learning Record (PG1)</a></li>";
 			//echo"<li><a href='guru.php?mode=R1D04LPG'>Print Learning Record (Pre-K)</a></li>";// - Pre-K
 			echo "<li><a href='guru.php?mode=R1D04LTK'>Print Learning Record (K1)</a></li>"; // - K1

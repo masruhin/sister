@@ -599,8 +599,6 @@ echo "
 			<td width='50%'>
 				<br/><br/>
 				<br/><br/>
-				<br/><br/>
-				<br/><br/>
 				<center>
 				<table width='100%'>
 				<tr>
@@ -686,7 +684,9 @@ echo "
 				<table align='right'>
 					<tr>
 						<!--<td	width='50'></td>-->
-						<td>	<img src='../../images/Pre-K/" . $kodekelas . ".jpg' height='130' width='150' />	</td><td valign='top'>	<br/> &nbsp;&nbsp; Jakarta, October 6, 2017 <br/><br/><br/><br/><br/> <u>Glorya Lumbantoruan S.Pd.</u> <br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; School Principal	</td>
+						<td><img src='../../images/Pre-K/" . $kodekelas . ".jpg' height='130' width='120' alt='centered img' style='' text-align='center' position ='center' />
+						<td></td>	<td></td></td><td valign='top'>	
+						<br/> &nbsp;&nbsp; Jakarta, October 6, 2017 <br/><br/><br/><br/><br/> <u>Glorya Lumbantoruan S.Pd.</u> <br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; School Principal	</td>
 						<td	width='20'></td>
 					</tr>
 				</table>
@@ -724,37 +724,6 @@ echo "
 
 	<center></center>
 	<table width='100%' class='center'>
-		<tr>
-			<!--	awal table kanan	-->
-			<td width='50%'>
-				<br/><br/>
-				<br/><br/>
-				<br/><br/>
-				<br/><br/>
-				<center>
-				<table width='100%'>
-				<tr>
-				<td	width='50'></td>
-				<td align='center'>	
-					<FONT FACE='ARIAL'  SIZE='5'><b><u>Student Progress Report</u></b></font>
-					<br/>
-					<FONT FACE='ARIAL'  SIZE='5'><b><u>Pre-Kindergarten</u></b></font>
-					<br/>
-					<FONT FACE='ARIAL'  SIZE='5'><b><u>Academic Year 2020-2021</u></b></font>
-
-				<br/>
-
-				<table align='right'>
-					<tr>
-						<!--<td	width='50'></td>-->
-						<td></td>
-							<td valign='top'>	<br/> &nbsp;&nbsp; Jakarta, October 6, 2017 <br/><br/><br/><br/><br/> <u>Glorya Lumbantoruan S.Pd.</u> <br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; School Principal	</td>
-						<td	width='20'></td>
-					</tr>
-				</table>
-			</td>
-			<!--	akhir table kanan	-->
-		</tr>
 	</table>";
 if ($nis == '327') {
 } else if ($nis == '396' or $nis = '320') {

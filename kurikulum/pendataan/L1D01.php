@@ -610,4 +610,3 @@ class L1D01class
 		echo"<meta http-equiv='refresh' content=\"0;url=kurikulum.php?mode=L1D01_Personil&kdetkt=$kdetkt&pilihan=detil\">\n";
  	}	
 }//akhir class
-?>
