@@ -2126,4 +2126,4 @@ class T1D01class
 		</FORM>";
  	}
 }//akhir class
-?>
+?>	

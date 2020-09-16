@@ -21,12 +21,6 @@ if ($tglctk == '') {
 	$tglctk	= date('d F, Y', $tglctk);
 }
 
-
-
-
-
-
-
 //..
 $query	= "	SELECT 		t_setthn_tk.*
 			FROM 		t_setthn_tk
@@ -576,22 +570,10 @@ if ($data2 = mysql_fetch_array($result2)) {
 		$kkelas = 'K2 Jerusalem';
 }
 
-
-
-
-
 //..margin-top: 0; margin-left: 0; margin-right: 0; margin-bottom: 0;
 
-
-
 echo "
-
-
-	
-	
-	
 	<!--	awal halaman 2	-->
-
 	<center></center>
 	<table width='100%' class='center'>
 		<tr>
@@ -674,7 +656,6 @@ echo "
 					</table>
 				</td>
 				</tr>
-				
 				</table>
 				</center>
 				
@@ -700,37 +681,163 @@ if ($nis == '327') {
 }
 
 echo "
-
-	
 ";
 
-
-
-//..
 echo "
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	<br/><br/><br/><br/>
+<html>
+	<head> 
+		<title> 
+			 
+		</title> 
+		<style> 
+				#tengah{
+					height: 100px;
+					margin-left: 200px;
+					margin-right: 200px;
+					position:relative;
+					display: flex; 
+					align-items: center;
+					text-align:center; 
+				}
 
-
-	<br/>
-	<br/>
-	<br/>
-	<br/>
-	<br/>
-	<br/>
-	<br/>
-	<br/>
-	
-	
-	<!--	awal halaman 2	-->
-
-	<center></center>
-	<table width='100%' class='center'>
-	</table>";
-if ($nis == '327') {
-} else if ($nis == '396' or $nis = '320') {
-	echo "<br/><br/>";
+				.atas{
+					display: block;
+					width:20.99cm ;
+					margin:0px;
+					padding:0px;
+					}
+					.kanan tr td{
+						font-size:12px;
+					}
+					table.grid{
+border-collapse:collapse;
 }
 
-echo "
+table.grid tr td{
 
-	
-";
+}
+		</style> 
+	</head> 
+		
+	<body> 
+		<div id='tengah'>
+			<img src = '../../images/logo_sjs_meruya.png' style=' text-align:center; margin-left: 20px; margin-right: 20px;' height='100px' width='100px' alt='' >
+			<span> 
+				<h3>Student Progress Report</h3>
+				<h3>Pre-Kindergarten</h3>
+				<h3>Academic Year 2020 - 2021</h3>
+			</span> 
+		</div>
+<br>
+
+
+		<div class='atas'>
+			<FORM ACTION=tatausaha.php METHOD='get'>
+			<TABLE BORDER='0' BORDERCOLOR='#000000' CELLPADDING='5' CELLSPACING='5' WIDTH='100%'>
+				<TR></TR><TR></TR>
+				<TR><TD WIDTH='15%'>Name</TD>
+					<TD WIDTH='45%'>: 
+							$nmassw						
+					</TD>
+
+					<td WIDTH='15%'>Date Of Birth</td>
+					<td> : </td>
+					<TD WIDTH='35%'>
+						 $tgllhr									
+					</TD>
+
+				</TR>
+			
+				<TR><TD>Studen No</TD>
+					<TD WIDTH='30%'>:
+							$nis
+					</TD>
+<br>
+
+					<td WIDTH='15%'>Class</td>
+					<td> : </td>
+					<TD WIDTH='35%'>
+						 $kkelas									
+					</TD>							
+				</TR>
+				
+				<TR><TD><u>TEACHERS</u></TD>
+					<TD>:
+						
+					</TD>
+				</TR>
+
+				<tr width='50%'>
+					<td>Lucia Manalu</td>
+					<td></td>
+					<td>Class Teacher</td>
+				</tr>
+								
+				<tr width='50%'>
+					<td>Tri Puji Lestari</td>
+					<td></td>
+					<td>Class Teacher</td>
+				</tr>
+
+				<tr width='50%'>
+					<td colspan='2'>Luminta Intan Klementina</td>
+					<td colspan='2'>Mandarin Teacher</td>
+					<td></td>
+				</tr>
+
+			</TABLE>
+		</FORM>
+		</div>
+<br>
+
+<FORM ACTION='tatausaha.php?mode=T1D01' METHOD='post'>
+
+			<DIV style=''>
+				<TABLE BORDER='1' BORDERCOLOR='#000000' CELLPADDING='5' CELLSPACING='0' WIDTH='100%'>
+					<TR bgcolor='dedede'>
+					<TD WIDTH='10%'><CENTER>Status 			</CENTER></TD>
+					<TD WIDTH='30%'><CENTER>Description Rating 			</CENTER></TD>
+					<TD WIDTH='60%'><CENTER>Interpretation   </CENTER></TD>
+					</TR>
+					<tr>
+						<TD WIDTH='10%'><CENTER>A			</CENTER></TD>
+						<TD WIDTH='30%'><CENTER>Achieving 			</CENTER></TD>
+						<TD WIDTH='60%'>Is an excellently the desired competency   </TD>
+					</tr>
+
+					<tr>					
+						<TD WIDTH='10%'><CENTER>P			</CENTER></TD>
+						<TD WIDTH='30%'><CENTER>Progressing 			</CENTER></TD>
+						<TD WIDTH='60%'>Is in progress of achieving the desired competency  </TD>
+					</tr>
+
+					<tr>					
+						<TD WIDTH='10%'><CENTER>B			</CENTER></TD>
+						<TD WIDTH='30%'><CENTER>Beginning 			</CENTER></TD>
+						<TD WIDTH='60%'>Is beginning to acquire the desired competency  </TD>
+					</tr>
+
+					<tr>					
+						<TD WIDTH='10%'><CENTER>O			</CENTER></TD>
+						<TD WIDTH='30%'><CENTER>Observing 			</CENTER></TD>
+						<TD WIDTH='60%'>Is in observing to reach the desired competency  </TD>
+					</tr>
+
+					
+					";
+echo "	
+				</TABLE>
+
+				<h3>ATTENDANCE</h3>
+				<span>
+					<ol>
+						<li></li>
+					</ol>
+				</span>
+			</DIV>
+			<BR>";
+// otorisasi akses tambah
+echo "	
+		</FORM>";

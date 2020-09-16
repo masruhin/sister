@@ -93,4 +93,3 @@ class R1D04LTK2class
 		</FORM>";
  	}
 }//akhir class
-?>

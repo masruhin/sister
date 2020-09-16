@@ -152,159 +152,6 @@ if (!isset($_SESSION['Admin'])) {
 
 
 
-		/*
-						if($hsl>0)
-						{
-							echo"	
-							<li><span class='dir'>Teacher Tools</span>
-								<ul>
-									";
-									if($kdetkt=='PS')
-									{
-										if($kdekry=='M13070050')//Mr. Victor
-										{
-											
-										}
-										else
-										{
-											echo"<li><a href='guru.php?mode=R1D01B_Soal&pilihan=tambah_general'>Create Questions</a></li>";
-											echo"<li><a href='guru.php?mode=R1D01BS&pilihan=tambah_general'>Upload Bank Soal</a></li>";
-											echo"<li><a href='guru.php?mode=R1D01Q&pilihan=tambah_general'>Upload Test Questions</a></li>";
-											echo"<li><a href='guru.php?mode=R1D04HSD2'>Input Bimbingan Konseling (PS)</a></li>";//2
-										}
-									}
-									
-									
-									
-									if($kdetkt=='PG' OR $kdetkt=='KG')
-									{
-										echo"<li><a href='guru.php?mode=R1D01I&pilihan=tambah_general'>Lesson Plan</a></li>
-											<li><a href='guru.php?mode=R1D01E&pilihan=tambah_general'>Upload Worksheet</a></li>";
-									}
-									else
-									{
-										if($kdekry=='M13070050')//Mr. Victor
-										{
-											echo"<li><a href='guru.php?mode=R1D01A&pilihan=tambah_general'>Upload Material</a></li>";
-											echo"<li><a href='guru.php?mode=R1D04HSD2'>Input Bimbingan Konseling (PS)</a></li>";//2
-											echo"<li><a href='guru.php?mode=R1D04HINTRVW'>Input Hasil Interview (PS)</a></li>";
-										}
-										else
-										{
-											echo"<li><a href='guru.php?mode=R1D01A&pilihan=tambah_general'>Upload Material</a></li>";
-											echo"<li><a href='guru.php?mode=R1D01E&pilihan=tambah_general'>Upload Worksheet</a></li>";
-										}
-										
-										
-									    
-										if($kdetkt=='PS')
-										{
-											if($kdekry=='M13070050')//Mr. Victor
-											{
-												
-											}
-											else
-											{
-												echo"<li><span class='dir'>Curriculum Plan</span>";
-												echo"<ul>";
-													echo"<li><a href='guru.php?mode=R1D01H1&pilihan=tambah_general'>Semester 1</a></li>";
-													echo"<li><a href='guru.php?mode=R1D01H2&pilihan=tambah_general'>Semester 2</a></li>";
-												echo"</ul>";
-												echo"</li>";
-												
-												
-												
-												echo"<li><span class='dir'>Lesson Plan</span>";
-												echo"<ul>";
-													echo"<li><span class='dir'>Semester 1</span>";
-													echo"<ul>";
-														echo"<li><a href='guru.php?mode=R1D01GQ1&pilihan=tambah_general'>Quarter 1</a></li>";
-														echo"<li><a href='guru.php?mode=R1D01GQ2&pilihan=tambah_general'>Quarter 2</a></li>";
-													echo"</ul>";
-													echo"</li>";
-													
-													echo"<li><span class='dir'>Semester 2</span>";
-													echo"<ul>";
-														echo"<li><a href='guru.php?mode=R1D01GQ3&pilihan=tambah_general'>Quarter 3</a></li>";
-														echo"<li><a href='guru.php?mode=R1D01GQ4&pilihan=tambah_general'>Quarter 4</a></li>";
-													echo"</ul>";
-													echo"</li>";
-												echo"</ul>";
-												echo"</li>";
-											}
-										}
-										else
-										{
-											echo"<li><a href='guru.php?mode=R1D01H&pilihan=tambah_general'>Curriculum Plan</a></li>";
-											echo"<li><a href='guru.php?mode=R1D01G&pilihan=tambah_general'>Lesson Plan</a></li>";
-										}
-									}
-									
-									echo"
-								</ul>
-							</li>";
-						}
-						*/
-
-
-
-		/*
-						if($kdejbt=='000' OR $kdejbt=='100' OR $kdejbt=='200' OR $kdejbt=='300' OR substr($kdekry,0,1)=='@')
-						{
-							if($kdejbt=='000' OR $kdejbt=='100' OR $kdejbt=='200' OR substr($kdekry,0,1)=='@')
-							{
-								echo"
-								<li><span class='dir'>Control</span>
-									<ul>";
-									
-										if($kdetkt=='PG' OR $kdetkt=='KG')
-										{
-											
-										}
-										else
-										{
-											echo"<li><a href='guru.php?mode=R1D02A'>Subject</a></li>";
-										}
-										echo"<li><a href='guru.php?mode=R1D02B'>Class</a></li>";
-										
-										if($kdetkt=='PG' OR $kdetkt=='KG')
-										{
-											echo"<li><a href='guru.php?mode=R1D02E'>Teacher</a></li>";
-										}
-										else
-										{
-											echo"<li><a href='guru.php?mode=R1D02C'>Teacher</a></li>";
-										}
-										
-										echo"<li><a href='guru.php?mode=R1D02D'>Student</a></li>
-									</ul>
-								</li>";
-							}
-							else//if($kdejbt=='300')
-							{
-								echo"
-								<li><span class='dir'>Control</span>
-									<ul>";
-										if($kdetkt=='PG' OR $kdetkt=='KG')
-										{
-											
-										}
-										else
-										{
-											echo"<li><a href='guru.php?mode=R1D02A'>Subject</a></li>";
-										}
-										echo"<li><a href='guru.php?mode=R1D02B'>Class</a></li>";
-										
-										echo"<li><a href='guru.php?mode=R1D02D'>Student</a></li>
-									</ul>
-								</li>";
-							}
-							
-						}
-						*/
-
-
-
 		echo "<li>";
 
 		echo "<span class='dir'>Upload</span>";
@@ -372,6 +219,21 @@ if (!isset($_SESSION['Admin'])) {
 
 		//TK
 		if ($kdetkt == 'PG' or $kdetkt == 'KG') {
+
+			// Dropdown menu Penilain
+			// echo "<span class='dir'>Valuation</span>";
+			// echo "<ul>";
+			// echo "<li><a href='guru.php?mode=R1D01H&pilihan=tambah_general'>Silabus</a></li>"; //Curriculum Plan
+			// echo "<li><a href='guru.php?mode=R1D01BS&pilihan=tambah_general'>Year Plan</a></li>";
+			// echo "<li><a href='guru.php?mode=R1D01Q&pilihan=tambah_general'>Semester Plan</a></li>";
+			// echo "<li><a href='guru.php?mode=R1D01G&pilihan=tambah_general'>Lesson Plan</a></li>";
+			// echo "<li><a href='guru.php?mode=R1D01E&pilihan=tambah_general'>Assessment</a></li>";
+			// echo "<li><a href='guru.php?mode=R1D01A&pilihan=tambah_general'>Handout</a></li>";
+			// echo "</ul>";
+			// echo "</li>";
+
+			// Dropdown menu report
+			// echo "<li>";
 			echo "<span class='dir'>Report</span>";
 			echo "<ul>";
 			echo "<li><a href='guru.php?mode=R1D04HPGTK1'>Input Comment (1. Personal, Social, and Emotional Development)</a></li>";
@@ -394,24 +256,13 @@ if (!isset($_SESSION['Admin'])) {
 		if ($kdetkt == 'PS') {
 			echo "<span class='dir'>Report</span>";
 			echo "<ul>";
-
-
-			/*echo"<li><a href='guru.php?mode=R1D04SD'>Input Learning Record (PS) LO</a></li>";
-								echo"<li><a href='guru.php?mode=R1D04XSD_Cari'>Input Learning Record (PS) LO Score</a></li>";
-								echo"<li><a href='guru.php?mode=R1D04SDlrcd'>Print Learning Record (PS)</a></li>";*/
-			//echo"<li>	SD	</li>";
-			//echo"<li><hr/></li>";
-			//echo"<li><a href='guru.php?mode=R1D04G_Cari'>Input Extra Curricular (PS)</a></li>";
 			echo "<li><a href='guru.php?mode=R1D04H'>Input Absences (PS)</a></li>"; //Input Absences & Comment
-
 			echo "<li><a href='guru.php?mode=R1D04X_Cari'>Input Grading Sheet (PS)</a></li>";
 			echo "<li><a href='guru.php?mode=R1D04R'>Print Grading Sheet (PS)</a></li>";
-
 			echo "<li><a href='guru.php?mode=R1D04LSD'>Print Mid Semester Ledger (PS)</a></li>";
 			echo "<li><a href='guru.php?mode=R1D04LSDfnl'>Print Final Semester Ledger (PS)</a></li>";
 			echo "<li><a href='guru.php?mode=R1D04OSD'>Print Mid Semester Report (PS)</a></li>";
 			echo "<li><a href='guru.php?mode=R1D04PSD'>Print Final Semester Report (PS)</a></li>";
-
 			echo "</ul>";
 		}
 
@@ -444,274 +295,6 @@ if (!isset($_SESSION['Admin'])) {
 		}
 
 
-
-		/*AWAL KOMEN BUATAN
-							
-							if($kdetkt=='PS' OR $kdetkt=='JHS' OR $kdetkt=='SHS' OR $kdekry=='M17070102')	//Luminta Intan
-							{
-								echo"<span class='dir'>Report</span>";
-							}
-							
-							echo"<ul>";
-						
-								if(($kdetkt=='PS' OR $kdetkt=='JHS' OR $kdetkt=='SHS')	AND ($kdejbt=='100' OR $kdejbt=='200' OR $kdejbt=='300' OR $kdejbt=='400'))
-								{
-									echo"<li><a href='guru.php?mode=R1D04G_Cari'>Input Extra Curricular</a></li>";
-									
-									if($kdetkt=='PS' )
-									{
-										echo"<li><a href='guru.php?mode=R1D04SD'>Input Learning Record (PS) LO</a></li>";
-										echo"<li><a href='guru.php?mode=R1D04XSD_Cari'>Input Learning Record (PS) LO Score</a></li>";
-									}
-									
-									else if($kdetkt=='JHS' OR $kdetkt=='SHS')
-									{
-										echo"<li><a href='guru.php?mode=R1D04F'>Input Personality Traits & Behavior</a></li>";
-									}
-								}
-								if(($kdetkt=='PS' OR $kdetkt=='JHS' OR $kdetkt=='SHS')	AND ($kdejbt=='200' OR $kdejbt=='300' OR $kdejbt=='900'))		//$kdejbt=='200' OR 
-								{
-									//asli
-									echo"<li><a href='guru.php?mode=R1D04H'>Input Absences & Comment</a></li>";
-									//
-								}
-
-								if ($kdekry=='M17070102')// 	Luminta Intan
-								{
-									echo"
-									<li><a href='guru.php?mode=R1D04X_Cari'>Input Grading Sheet (PS)</a></li>";
-								}
-
-								if(($kdetkt=='PS' OR $kdetkt=='JHS' OR $kdetkt=='SHS')	AND ($kdejbt=='100' OR $kdejbt=='200' OR $kdejbt=='300' OR $kdejbt=='400'))
-								{
-									// awal buatan
-									if ($kdekry=='M12070037' OR $kdekry=='M17070110')// 	Dian Kristiandari
-									{
-										echo"
-										<li><a href='guru.php?mode=R1D04X_Cari'>Input Grading Sheet (PS)</a></li>";
-										
-										echo"
-										<li><a href='guru.php?mode=R1D04YSMP_Cari'>Input Grading Sheet (JHS) 7-8</a></li>";
-										echo"
-										<li><a href='guru.php?mode=R1D04Y_Cari'>Input Grading Sheet (JHS) 9</a></li>";
-										
-										echo"
-										<li><a href='guru.php?mode=R1D04YSMA_Cari'>Input Grading Sheet (SHS) 10-11</a></li>";
-										echo"
-										<li><a href='guru.php?mode=R1D04Z_Cari'>Input Grading Sheet (SHS) 12 (Practice)</a></li>";
-										echo"
-										<li><a href='guru.php?mode=R1D04ZSMA_Cari'>Input Grading Sheet (SHS) 12 (Theory)</a></li>";
-									}
-									
-									if ($kdetkt=='PS')
-									{
-										echo"
-										<li><a href='guru.php?mode=R1D04X_Cari'>Input Grading Sheet (PS)</a></li>";
-										
-										
-									}
-									else if ($kdetkt=='JHS' OR $kdetkt=='SHS')
-									{
-										if ($kdekry=='M15070079')//Ms. Hesti
-										{
-											echo"
-											<li><a href='guru.php?mode=R1D04YSMP_Cari'>Input Grading Sheet (JHS) 7-8</a></li>";
-										}
-										else
-										{
-											echo"
-											<li><a href='guru.php?mode=R1D04YSMP_Cari'>Input Grading Sheet (JHS) 7-8</a></li>";
-											echo"
-											<li><a href='guru.php?mode=R1D04Y_Cari'>Input Grading Sheet (JHS) 9</a></li>";
-										}
-										
-										
-										
-										echo"
-										<li><a href='guru.php?mode=R1D04YSMA_Cari'>Input Grading Sheet (SHS) 10-11</a></li>";
-										
-										echo"
-										<li><a href='guru.php?mode=R1D04Z_Cari'>Input Grading Sheet (SHS) 12 (Practice)</a></li>";
-										echo"
-										<li><a href='guru.php?mode=R1D04ZSMA_Cari'>Input Grading Sheet (SHS) 12 (Theory)</a></li>";
-									}
-									else
-									{
-										echo"
-										<li><a href='guru.php?mode=R1D04I_Cari'>Input Progress Report (PS-JHS-SHS)</a></li>";
-									}
-									// akhirs buatan
-									
-								}
-								if((($kdetkt=='PS' OR $kdetkt=='JHS' OR $kdetkt=='SHS')	AND ($kdejbt=='100' OR $kdejbt=='200' OR $kdejbt=='300' OR $kdejbt=='900')) OR $kdejbt=='000' OR substr($kdekry,0,1)=='@')
-								{
-									
-								}
-								if(($kdetkt=='PS' OR $kdetkt=='JHS' OR $kdetkt=='SHS')	AND ($kdejbt=='100' OR $kdejbt=='200' OR $kdejbt=='300' OR $kdejbt=='400' OR $kdejbt=='900' OR $kdejbt=='000' ) OR substr($kdekry,0,1)=='@')
-								{
-									// awal buatan
-									if ($kdekry=='M12070037' OR $kdekry=='M17070110')
-									{
-										
-										echo"
-										<li><a href='guru.php?mode=R1D04R'>Print Grading Sheet (PS)</a></li>";
-										
-										echo"
-										<li><a href='guru.php?mode=R1D04SSMA'>Print Grading Sheet (SHS) 10-11</a></li>";
-										echo"
-										<li><a href='guru.php?mode=R1D04T'>Print Grading Sheet (SHS) 12 (Practice)</a></li>";
-										echo"
-										<li><a href='guru.php?mode=R1D04TSMA'>Print Grading Sheet (SHS) 12 (Theory)</a></li>";
-									}
-									
-									if ($kdetkt=='PS')
-									{
-										echo"
-										<li><a href='guru.php?mode=R1D04SDlrcd'>Print Learning Record (PS)</a></li>";
-										echo"
-										<li><a href='guru.php?mode=R1D04R'>Print Grading Sheet (PS)</a></li>";
-										
-										
-									}
-									else if ($kdetkt=='JHS' OR $kdetkt=='SHS')
-									{
-										if ($kdekry=='M15070079')//Ms. Hesti
-										{
-											echo"
-											<li><a href='guru.php?mode=R1D04SSMP'>Print Grading Sheet (JHS) 7-8</a></li>";
-										}
-										else
-										{
-											echo"
-											<li><a href='guru.php?mode=R1D04SSMP'>Print Grading Sheet (JHS) 7-8</a></li>";
-											echo"
-											<li><a href='guru.php?mode=R1D04S'>Print Grading Sheet (JHS) 9</a></li>";
-										}
-										
-										echo"
-										<li><a href='guru.php?mode=R1D04SSMA'>Print Grading Sheet (SHS) 10-11</a></li>";
-										
-										echo"
-										<li><a href='guru.php?mode=R1D04T'>Print Grading Sheet (SHS) 12 (Practice)</a></li>";
-										echo"
-										<li><a href='guru.php?mode=R1D04TSMA'>Print Grading Sheet (SHS) 12 (Theory)</a></li>";
-									}
-									else
-									{
-										echo"
-										<li><a href='guru.php?mode=R1D04K'>Print Grading Sheet (PS-JHS-SHS)</a></li>";
-									}
-									// akhirs buatan
-									
-								}	
-								if((($kdetkt=='PS' OR $kdetkt=='JHS' OR $kdetkt=='SHS')	AND ($kdejbt=='100' OR $kdejbt=='200' OR $kdejbt=='300' OR $kdejbt=='900')) OR $kdejbt=='000' OR substr($kdekry,0,1)=='@')
-								{
-									if ($kdetkt=='PS')
-									{
-										echo"
-										<li><a href='guru.php?mode=R1D04LSD'>Print Mid Term Ledger (PS)</a></li>";
-										echo"
-										<li><a href='guru.php?mode=R1D04LSDfnl'>Print Semester Ledger (PS)</a></li>";
-										echo"
-										<li><a href='guru.php?mode=R1D04OSDsms'>Print Class Performance (PS)</a></li>";
-										echo"
-										<li><a href='guru.php?mode=R1D04OSD'>Print Mid Term Report (PS)</a></li>";
-										echo"
-										<li><a href='guru.php?mode=R1D04PSD'>Print Final Report (PS)</a></li>"; 
-									}
-									else if ($kdetkt=='JHS')
-									{
-										if ($kdekry=='M11070032')
-										{
-											
-										}
-										else
-										{
-											echo"
-											<li><a href='guru.php?mode=R1D04LSMPK13'>Print Mid Term Ledger (JHS) 7-8</a></li>";
-											echo"
-											<li><a href='guru.php?mode=R1D04LSMP'>Print Mid Term Ledger (JHS) 9</a></li>";
-										}
-										
-										echo"
-										<li><a href='guru.php?mode=R1D04OSMP'>Print Mid Term Report (JHS) 7-8</a></li>";
-										echo"
-										<li><a href='guru.php?mode=R1D04PSMP'>Print Final Report (JHS) 9</a></li>"; 
-										
-										echo"
-										<li><a href='guru.php?mode=R1D04LSMP7'>Cetak Rapot Diknas (JHS) 7</a></li>";
-										
-										
-										
-									}
-									else if ($kdetkt=='SHS')
-									{
-										echo"
-											<li><a href='guru.php?mode=R1D04LSMAK13'>Print Mid Term Ledger (SHS) 10-11 IPA</a></li>";
-										echo"
-											<li><a href='guru.php?mode=R1D04LSMAK13ips'>Print Mid Term Ledger (SHS) 10-11 IPS</a></li>";
-											
-										//..
-										
-										echo"
-										<li><a href='guru.php?mode=R1D04LSMAG'>Print Mid Term Ledger (SHS) 12 Grade</a></li>";
-										echo"
-										<li><a href='guru.php?mode=R1D04LSMA'>Print Mid Term Ledger (SHS) 12 Tp Grade</a></li>";
-										
-										
-										
-										//..
-										if( $kdekry == 'M12070041' )
-										{
-											echo"
-											<li><a href='guru.php?mode=R1D04OSMP'>Print Mid Term Report (JHS) 7-8</a></li>";
-											echo"
-											<li><a href='guru.php?mode=R1D04PSMP'>Print Final Report (JHS) 9</a></li>"; 
-										}
-										//..
-										
-										
-										
-										echo"
-										<li><a href='guru.php?mode=R1D04OSMA'>Print Mid Term Report (SHS) 10-11 IPA</a></li>";
-										echo"
-										<li><a href='guru.php?mode=R1D04OSMAips'>Print Mid Term Report (SHS) 10-11 IPS</a></li>";
-										
-										
-										
-										echo"
-										<li><a href='guru.php?mode=R1D04PSMA12'>Print Final Report (SHS) 12 IPA</a></li>"; 
-										echo"
-										<li><a href='guru.php?mode=R1D04PSMAips12'>Print Final Report (SHS) 12 IPS</a></li>"; 
-										
-										
-										
-										//..
-										if( $kdekry == 'M12070041' )
-										{
-											echo"
-											<li><a href='guru.php?mode=R1D04LSMP7'>Cetak Rapot Diknas (JHS) 7</a></li>";
-										}
-										echo"
-										<li><a href='guru.php?mode=R1D04LSMA11'>Cetak Rapot Diknas (SHS) 11</a></li>";
-										
-										
-										
-										echo"
-										<li><a href='guru.php?mode=R1D04BISMA'>Cetak Buku Induk Siswa SMA</a></li>";
-										echo"
-										<li><a href='guru.php?mode=R1D04BISMA2'>Cetak Data Nilai Siswa SMA</a></li>";
-									}
-									else
-									{
-										echo"
-										<li><a href='guru.php?mode=R1D04P'>Print Final Report (PS-JHS-SHS)</a></li>"; 
-									}
-								}
-								
-									
-									
-							echo "</ul>";				*/ //AKHIR KOMEN BUATAN
 		echo "</li>";
 
 
@@ -721,11 +304,6 @@ if (!isset($_SESSION['Admin'])) {
 
 			echo "<span class='dir'>Rapor Diknas</span>";
 			echo "<ul>";
-
-			//echo"<li><a href='guru.php?mode=R1D11G'>Input Nilai Sikap (SD)</a></li>";
-			//echo"<li><a href='guru.php?mode=R1D11H'>Input Deskripsi Pengetahuan (SD)</a></li>";
-			//echo"<li><a href='guru.php?mode=R1D11I'>Input Deskripsi Keterampilan (SD)</a></li>";
-
 			echo "<li><a href='guru.php?mode=R1D11A'>Cetak Rapor Diknas Cover 1 (SD)</a></li>";
 			echo "<li><a href='guru.php?mode=R1D11B'>Cetak Rapor Diknas Cover 2 (SD)</a></li>";
 			echo "<li><a href='guru.php?mode=R1D11C'>Cetak Rapor Diknas Cover 3 (SD)</a></li>";
@@ -756,8 +334,6 @@ if (!isset($_SESSION['Admin'])) {
 							</li>";
 		}
 
-		// echo"<li><a href='guru.php?mode=R1D03'>Informasi</a></li>";  
-		//<li><a href='guru.php?mode=R6U02'>eMail<span style='color: #DA3838;font-size: 7pt'>$mail</span></a></li>						
 		echo "	
 					<!--	<li><a href='guru.php?mode=R6U01'>Change Password</a></li>	-->
 					
@@ -907,6 +483,7 @@ if (!isset($_SESSION['Admin'])) {
 
 
 		//AWAL BUATAN BARU
+		require("pendataan/R1D04LTK21.php");
 		require("pendataan/R1D04LTK22.php");
 		require("pendataan/R1D11A.php");
 		require("pendataan/R1D11B.php");
@@ -1051,6 +628,7 @@ if (!isset($_SESSION['Admin'])) {
 
 
 		//AWAL BUATAN BARU
+		$R1D04LTK21class 	= new R1D04LTK21class;
 		$R1D04LTK22class 	= new R1D04LTK22class;
 
 		$R1D11Aclass 	= new R1D11Aclass;
@@ -1914,6 +1492,10 @@ if (!isset($_SESSION['Admin'])) {
 
 
 				//AWAL BUATAN BARU
+			case "R1D04LTK21";
+				$R1D04LTK21class->R1D04LTK21();
+				break;
+
 			case "R1D04LTK22";
 				$R1D04LTK22class->R1D04LTK22();
 				break;
