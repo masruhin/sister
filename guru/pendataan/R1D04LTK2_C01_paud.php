@@ -667,7 +667,7 @@ echo "
 						<!--<td	width='50'></td>-->
 						<td><img src='../../images/Pre-K/" . $kodekelas . ".jpg' height='130' width='120' alt='centered img' style='' text-align='center' position ='center' />
 						<td></td>	<td></td></td><td valign='top'>	
-						<br/> &nbsp;&nbsp; Jakarta, October 6, 2017 <br/><br/><br/><br/><br/> <u>Glorya Lumbantoruan S.Pd.</u> <br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; School Principal	</td>
+						<br/> &nbsp;&nbsp; Jakarta, $tglctk<br/><br/><br/><br/><br/> <u>Glorya Lumbantoruan S.Pd.</u> <br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; School Principal	</td>
 						<td	width='20'></td>
 					</tr>
 				</table>
@@ -771,13 +771,13 @@ table.grid tr td{
 
 				<tr width='50%'>
 					<td>Lucia Manalu</td>
-					<td></td>
+					<td> </td>
 					<td>Class Teacher</td>
 				</tr>
 								
 				<tr width='50%'>
 					<td>Tri Puji Lestari</td>
-					<td></td>
+					<td>  </td>
 					<td>Class Teacher</td>
 				</tr>
 
@@ -833,11 +833,36 @@ echo "
 				<h3>ATTENDANCE</h3>
 				<span>
 					<ol>
-						<li></li>
+						<li>Sick</li>
+						<li>Leave With permission</li>
+						<li>Absent</li>
+						<li>late</li>
 					</ol>
 				</span>
 			</DIV>
+
+				<table width='100%'>
+					<tr>
+						<td width='100%' valign='top'><br/>
+							Jakarta, $tglctk<br/>
+							<br/><br/><br/>
+							
+						</td>
+						
+					</tr>
+
+				<tr width='100%'>
+					<td width='50%'>Luminta Intan Klementina</td>
+					<td width='30%'>sdsd</td>
+					<td></td>
+				</tr>
+
+				</table>
+	
+		
 			<BR>";
+
+
 // otorisasi akses tambah
 echo "	
 		</FORM>";
